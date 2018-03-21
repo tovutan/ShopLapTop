@@ -1,0 +1,188 @@
+﻿@using ShopLapTop.Areas.Admin.Models;
+@{
+    ViewBag.Title = "chitietsanpham";
+    Layout = "~/Views/Shared/_KhachhangLayout.cshtml";
+}
+@section search{
+        <div class="visible-md visible-lg search">
+            @using (Html.BeginForm("tim", "Product", FormMethod.Post))
+            {
+                <input type="text" value="" name="txttim" placeholder="search...">
+                <input type="submit" value="">
+            }
+            <a href="#" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
+        </div>
+
+    }
+@section search2{
+        <div class="visible-xs search">
+            @using (Html.BeginForm("tim", "Product", FormMethod.Post))
+            {
+                <input type="text" value="" name="txttim" placeholder="search...">
+                <input type="submit" value="">
+            }
+            <a href="#" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
+        </div>
+
+    }
+<div class="women_main">
+<!-- start content -->
+    <div class="row single">
+        <div class="col-md-9 det">
+            <div class="single_left">
+                <div class="grid images_3_of_2" style="width:196px;height:196px;margin-left:auto;margin-right:auto;">
+                    <ul id="etalage" style="width:196px;height:196px;margin-left:auto;margin-right:auto;">
+                       @{
+                           List<Sanpham> kq = (List<Sanpham>)(ViewBag.kq);
+                       }
+                        @foreach (var item in kq)
+                        {
+                            <li>
+                                <a href="optionallink.html">
+                                    @*<img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh"  style="width:100%"  />*@
+                                    <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" style="width:100%" />
+                                </a>
+                            </li>
+
+
+                        @*<li>
+                            <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                            <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" title="" />
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                            <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                        </li>
+                        <li>
+                            <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                            <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                        </li>*@
+                        }
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="desc1 span_3_of_2">
+                    <p>Thông số kỹ thuật</p>
+                    <table border="1">
+                        @foreach (var item in kq)
+                        {
+                            <tr>
+                                <td>Model</td><td>@item.TenSP</td>                              
+                            </tr>
+                            <tr>
+                                <td>CPU</td>
+                                <td>
+                                    @item.cpu
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>RAM</td>
+                                <td>@item.ram</td>
+                            </tr>
+                            <tr>
+                                <td>Ổ cứng</td>
+                                <td>
+                                    @{ 
+                                        if (item.ssd != null && item.hdd != null)
+                                        {
+                                            @(item.ssd + item.hdd);
+                                        }
+                                        else if (item.ssd == null)
+                                        {
+                                            @item.hdd;
+                                        }
+                                        else if (item.hdd == null)
+                                        {
+                                            @item.ssd;
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CD/DVD</td>
+                                <td>@item.cd_dvd</td>
+                            </tr>
+                            <tr>
+                                <td>Card VGA</td>
+                                <td>@item.vga</td>
+                            </tr>
+                            <tr>
+                                <td>Màn hình</td>
+                                <td>@item.manhinh</td>
+                            </tr>
+                            <tr>
+                                <td>Kết nối</td>
+                                <td>@item.ketnoi</td>
+                            </tr>
+                            <tr>
+                                <td>Tích hợp</td>
+                                <td>@item.tichhop</td>
+                            </tr>
+                            <tr>
+                                <td>Trọng lượng</td>
+                                <td>@item.trongluong</td>
+                            </tr>
+                            <tr>
+                                <td>Pin</td>
+                                <td>@item.pin</td>
+                            </tr>
+                            <tr>
+                                <td>Hệ điều hành</td>
+                                <td>@item.hdh</td>
+                            </tr>
+                        }
+                       
+                    </table>                                     
+                    @*<div class="btn_form">
+                        <a href="checkout.html">buy</a>
+                    </div>*@
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="single-bottom1">
+                <h6>Thông tin chi tiết</h6>
+                <p class="prod-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option</p>
+            </div>
+            @*<div class="single-bottom2">              
+            </div>*@
+    </div>
+        <div class="col-md-3" style="margin-top:5%;">
+       
+                <table cellpadding="2" cellspacing="2">
+                    @foreach (var item in kq)
+                    {
+
+                        <tr>
+                            <td><span>Giá: </span></td>
+                           
+                                @if (item.Giaban == item.Giakhuyenmai)
+                                {
+                                    <td><span style="color:red;">@String.Format("{0:0,0}đ",item.Giaban)</span></td>
+                                }
+                                else
+                                {
+                                     <td><span style="color:red;text-decoration:line-through">@String.Format("{0:0,0}đ",item.Giaban) </span></td>
+                          
+                                    <td><span style="color:red;margin-left:9px;">@String.Format("{0:0,0}đ",item.Giakhuyenmai)</span></td>
+                                }                                                 
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    }
+                </table>
+            <div class="btn_form">
+                @foreach (var item in kq)
+                {
+                    <a href="~/GioHang/Them?Ma=@item.MaSP">Mua</a>
+                }
+                @*<a href="checkout.html">Mua</a>*@
+               
+            </div>
+        </div>  
+            <div class="clearfix"></div>
+        </div>
+<!-- end content -->
+ </div>
+

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopLapTop", "ShopLapTop\ShopLapTop.csproj", "{C28C7E14-84A0-4918-9497-4CAEEDD3EA23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7599D781-AB49-4C72-99FD-8CECCEEA0C22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{2C023C84-BC46-40CE-9025-BE0EC705F2A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C28C7E14-84A0-4918-9497-4CAEEDD3EA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28C7E14-84A0-4918-9497-4CAEEDD3EA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28C7E14-84A0-4918-9497-4CAEEDD3EA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28C7E14-84A0-4918-9497-4CAEEDD3EA23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7599D781-AB49-4C72-99FD-8CECCEEA0C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7599D781-AB49-4C72-99FD-8CECCEEA0C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7599D781-AB49-4C72-99FD-8CECCEEA0C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7599D781-AB49-4C72-99FD-8CECCEEA0C22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C023C84-BC46-40CE-9025-BE0EC705F2A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C023C84-BC46-40CE-9025-BE0EC705F2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C023C84-BC46-40CE-9025-BE0EC705F2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C023C84-BC46-40CE-9025-BE0EC705F2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

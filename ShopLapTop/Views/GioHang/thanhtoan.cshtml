@@ -1,0 +1,120 @@
+﻿@using ShopLapTop.Models
+@model List<GioHang.MotSanPhamTrongGioHang>
+@{
+    ViewBag.Title = "thanhtoan";
+    Layout = "~/Views/Shared/_KhachhangLayout.cshtml";
+}
+
+@*<script language="javascript">
+
+$(document).ready(function()
+{
+    
+    $('#thanhtoan').submit(function () {
+
+        // BƯỚC 1: Lấy dữ liệu từ form
+        var email = $.trim($('#txtNguoiMua').val());
+        ////var diachi = $.trim($('#txtDiachi').val());
+        //var re_password = $.trim($('#re_password').val());
+        //var email       = $.trim($('#email').val());
+        //var phone       = $.trim($('#phone').val());
+        //var address     = $.trim($('#address').val());
+
+        // BƯỚC 2: Validate dữ liệu
+        // Biến cờ hiệu
+        var flag = true;
+
+        // Username
+        if (email == '' || email.length < 4){
+            $('#email_error').text('Email đăng nhập phải lớn hơn 4 ký tự');
+            flag = false;
+        }
+        else
+        {
+            $('#email_error').text('');
+            flag = true;
+        }
+
+        // Password
+        if (email.length <= 0)
+        {
+            $('#email_error').text('Bạn phải nhập email');
+            flag = false;
+        }
+        else
+        {
+            $('#email_error').text('');
+        }
+
+        // Re password
+        //if (password != re_password)
+        //{
+        //    $('#re_password_error').text('Mật khẩu nhập lại không đúng');
+        //    flag = false;
+        //}
+        //else
+        //{
+        //    $('#re_password_error').text('');
+        //}
+
+        //// Email
+        //if (!isEmail(email))
+        //{
+        //    $('#email_error').text('Email không được để trống và phải đúng định dạng');
+        //    flag = false;
+        //}
+        //else
+        //{
+        //    $('#email_error').text('');
+        //}
+
+        return flag;
+    });
+});
+</script>*@
+<h2>Thông tin giỏ hàng</h2>
+<ul>
+    @{var tongtien = 0; }
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <li>
+                @item.Ten x <font color="blue"> <b>@item.SoLuong SP</b> </font> = @string.Format("{0:0,0} VND", @item.ThanhTien)
+            </li>
+            tongtien += item.ThanhTien;
+
+        }
+    }
+   
+   
+</ul>
+        <p style="color:red;">Tổng tiền: @string.Format("{0:0,0} VNĐ",tongtien)</p>
+<hr />
+<h2>Thông tin giao nhận</h2>
+@using (Html.BeginForm("thanhtoan", "GioHang",FormMethod.Post,new {@id="thanhtoan"}))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <table>
+      
+        <tr>
+            <td>Email của bạn:</td> <td>@Html.TextBox("txtNguoiMua","",new { @id="txtNguoiMua"})</td>
+           
+            @Html.ValidationMessage("txtNguoiMua",new {@class="text-danger" })
+            @*<td><span id="email_error"></span></td>*@
+        </tr>
+        <tr>
+            @*<td>Địa chỉ </td> <td>@Html.TextBox("txtDiachi","", new { @id = "txtDiachi" })</td>*@
+            @*@Html.ValidationMessage("txtDiachi", new { @class = "text-danger" })*@
+            @*<td><span id="diachi_error"></span></td>*@
+        </tr>
+        <tr>
+            <td><input type="hidden" name="txtTongTien" value="@tongtien" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="name" value="Xác nhận thanh toán" /></td>
+        </tr>
+    </table>
+}
+
+

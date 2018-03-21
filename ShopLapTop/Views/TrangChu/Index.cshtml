@@ -1,0 +1,251 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<ShopLapTop.Areas.Admin.Models.Sanpham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KhachhangLayout.cshtml";
+}
+@section search{
+    <div class="visible-md visible-lg search">
+        @using (Html.BeginForm("tim", "Product", FormMethod.Post))
+        {
+            <input type="text" value="" name="txttim" placeholder="search...">
+            <input type="submit" value="">
+        }
+        <a href="~/Product/timkiemnangcao" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
+    </div>   
+    }
+@section search2{
+    <div class="visible-xs search">
+        @using (Html.BeginForm("tim", "Product", FormMethod.Post))
+        {
+            <input type="text" value="" name="txttim" placeholder="search...">
+            <input type="submit" value="">
+        }
+        <a href="~/Product/timkiemnangcao" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
+    </div>
+
+}
+<h3>SẢN PHẨM</h3>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-3">
+            <div class="thumbnail" style="height:300px;">
+                <a href="~/Product/chitietsanpham/@item.MaSP" style="text-decoration: none;">
+                    <div class="image" style="width:196px;height:180px;margin-left:auto;margin-right:auto;">
+                        <img src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                    <div class="caption" style="height:110px;">                    
+                          
+                                @if (item.TenSP != null)
+                                {
+                                    if (item.TenSP.Count() <= 36)
+                                    {
+                                        <br />
+                                        <span style="font-size:13px;font-family: 'Roboto', arial; display:block;text-align:center;">
+                                            @item.TenSP
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span style="font-size:13px;font-family: 'Roboto', arial; display:block;text-align:center;">
+                                            @item.TenSP
+                                        </span>
+                                    }
+
+                                }
+                                else
+                                {
+                                    item.TenSP = null;
+                                }
+                            @*|@if (item.manhinh != null)
+                            {
+                                if (item.manhinh.Length < 5)
+                                {
+                                    @item.manhinh;
+                                }
+                                else
+                                {
+                                    @item.manhinh;
+                                }*@
+
+                            
+                            <span style="font-size:11px;font-family: 'Open Sans', arial;display:block;text-align:center;">
+                                @{
+                                    if (item.cpu != null)
+                                    {
+                                        if (item.cpu.Length < 12)
+                                        {
+                                            @item.cpu;
+                                        }
+                                        else
+                                        {
+                                            @item.cpu.Substring(12, 10);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @item.cpu;
+                                    }
+                                }  | @{
+                                    if (item.ram != null)
+                                    {
+                                        if (item.ram.Length < 9)
+                                        {
+                                            @item.ram;
+                                        }
+                                        else
+                                        {
+                                            @item.ram.Substring(0, 9);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @item.ram;
+                                    }
+                                }  |
+                               @{
+                                   if (item.vga != null)
+                                   {
+                                       if (item.vga.Length < 8)
+                                       {
+                                        @item.vga;
+                                       }
+                                       else if (item.vga.Contains("Quadro"))
+                                       {
+                                           if (item.vga.Length < 22)
+                                           {
+                                            @item.vga;
+                                           }
+                                           else
+                                           {
+                                            @item.vga.Substring(22, 17);
+                                           }
+                                       }
+                                       else if (item.vga.Contains("Ti"))
+                                       {
+
+                                           if (item.vga.Length < 16)
+                                           {
+                                            @item.vga;
+                                           }
+                                           else
+                                           {
+                                            @item.vga.Substring(16, 14);
+                                           }
+                                       }
+                                       else if (item.vga.Contains("GTX"))
+                                       {
+                                           if (item.vga.Length < 16)
+                                           {
+                                            @item.vga;
+                                           }
+                                           else
+                                           {
+                                            @item.vga.Substring(16, 13);
+                                           }
+                                       }
+                                       else if (item.vga.Contains("GTX") && (item.vga.Count() <= 48))
+                                       {
+                                           if (item.vga.Length < 16)
+                                           {
+                                            @item.vga;
+                                           }
+                                           else
+                                           {
+                                            @item.vga.Substring(16, 12);
+                                           }
+                                       }
+                                       else if (item.vga.Contains("AMD") && item.hdd.Contains("1TB"))
+                                       {
+                                        @*@item.vga.Substring(0, 23);*@
+                                              @item.hdd.Substring(0, 8);
+                                       }
+                                       else if (item.vga.Contains("AMD") && !item.hdd.Contains("1TB"))
+                                       {
+                                              @item.hdd.Substring(0, 9);
+                                       }
+                                       else if (item.vga.Contains("820M"))
+                                       {
+                                        @*@item.vga.Substring(16, 14);*@
+                               if (item.ssd != null)
+                               {
+                                   if (@item.ssd.Length < 9)
+                                   {
+                                        @item.ssd;
+                                   }
+                                   else
+                                   {
+                                    @item.ssd.Substring(0, 9);
+                                   }
+
+                               }
+                               else
+                               {
+                                   if (item.hdd.Contains("1TB"))
+                                   {
+                                       if (item.hdd.Length < 8)
+                                       {
+                                           @item.hdd;
+                                       }
+                                       else
+                                       {
+                                        @item.hdd.Substring(0, 8);
+                                       }
+
+                                   }
+                                   else
+                                   {
+                                       if (item.hdd.Length < 9)
+                                       {
+                                           @item.hdd;
+                                       }
+                                       else
+                                       {
+                                                 @item.hdd.Substring(0, 9);
+                                       }
+
+                                       }
+
+                                   }
+                               }
+                               else
+                               {
+                                   if (item.ssd != null)
+                                   {
+                                                @item.ssd.Substring(0, 9);
+                                            }
+                                            else
+                                            {
+                                                if (item.hdd.Contains("1TB"))
+                                                {
+                                                    @item.hdd.Substring(0, 8);
+                                                }
+                                                else
+                                                {
+                                                    @item.hdd.Substring(0, 10);
+                                                }
+
+                                            }
+                                         }
+
+                                     }
+                            }
+                              
+                            </span>
+                     
+
+                        <h5>@String.Format("{0:0,0}đ", @item.Giaban)</h5>
+                    </div>
+                </a>
+                <br />            
+            </div>
+        </div>
+
+    }
+  
+</div>
+
+<div>
+    @Html.PagedListPager(Model,page=>Url.Action("index",new { page=page}))
+</div>

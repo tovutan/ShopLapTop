@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "dangki";
+    Layout = "~/Views/Shared/_KhachhangLayout.cshtml";
+}
+
+@*<h2>Tạo tài khoản khách hàng mới</h2>*@
+<div class="main">
+    <!-- start registration -->
+    <div class="registration">
+        <div class="registration_left">
+            @*<h2>new user? <span> create an account </span></h2>*@
+            <h2>Tạo tài khoản khách hàng mới</h2>
+            <!-- [if IE]
+                < link rel='stylesheet' type='text/css' href='ie.css'/>
+             [endif] -->
+            <!-- [if lt IE 7]>
+                < link rel='stylesheet' type='text/css' href='ie6.css'/>
+            <! [endif] -->
+
+
+
+            @*<script>
+			(function() {
+
+			// Create input element for testing
+			var inputs = document.createElement('input');
+
+			// Create the supports object
+			var supports = {};
+
+			supports.autofocus   = 'autofocus' in inputs;
+			supports.required    = 'required' in inputs;
+			supports.placeholder = 'placeholder' in inputs;
+
+			// Fallback for autofocus attribute
+			if(!supports.autofocus) {
+
+			}
+
+			// Fallback for required attribute
+			if(!supports.required) {
+
+			}
+
+			// Fallback for placeholder attribute
+			if(!supports.placeholder) {
+
+			}
+
+			// Change text inside send button on submit
+			var send = document.getElementById('register-submit');
+			if(send) {
+				send.onclick = function () {
+					this.innerHTML = '...Sending';
+				}
+			}
+
+		})();
+            </script>*@
+            <div class="registration_form">
+                <!-- Form -->
+                @using (Html.BeginForm("dangki", "KhachHang", FormMethod.Post))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" });
+                    <div>
+                        <label>
+                            <input placeholder="Họ Tên:" type="text" name="Hoten" tabindex="1" value="@ViewBag.hoten"  autofocus="">
+                           @Html.ValidationMessage("Hoten", new { @class = "text-danger" })
+                        </label>
+                    </div>            
+                    <div>
+                        <label>
+                            <input placeholder="Email:" type="email" name="Email" value="@ViewBag.email" tabindex="2" >
+                            @Html.ValidationMessage("email", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                    <div class="sky-form">
+                        <div class="sky_form1">
+                            <ul>
+                                <li><label class="radio left"><input type="radio" tabindex="3" name="Gioitinh" value="Nam" @if (ViewBag.gt =="Nam") {@:checked
+                                                                      } ><i></i>Nam</label></li>
+
+                                <li><label class="radio"><input type="radio" tabindex="4" name="Gioitinh" value="Nữ" @if (ViewBag.gt =="Nữ") { @:checked
+                                }><i></i>Nữ</label></li>
+                                
+                                <div class="clearfix"></div>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <label>
+                            <input placeholder="Mật khẩu" name="Password" type="password" value="@ViewBag.mk" tabindex="5" >
+                            @Html.ValidationMessage("Password", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input placeholder="Nhập lại mật khẩu" name="RePassword" type="password" value="@ViewBag.nlmk" tabindex="6" >
+                            @Html.ValidationMessage("RePassword", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <input placeholder="Số điện thoại:" type="text" name="Dienthoai" tabindex="7" value="@ViewBag.sdt"  autofocus="">
+                            @Html.ValidationMessage("Dienthoai", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input placeholder="Địa chỉ:" type="text" name="Diachi" value="@ViewBag.dc" tabindex="8" >   @*required=""*@
+                            @Html.ValidationMessage("Diachi", new { @class = "text-danger" })
+                        </label>
+                    </div>
+                    <input type="submit" value="Tạo tài khoản" tabindex="9" id="register-submit">
+                   
+                    @*<div class="sky-form">
+                        <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>i agree to shoppe.com &nbsp;<a class="terms" href="#"> terms of service</a> </label>
+                    </div>*@
+                }
+                <!-- /Form -->
+            </div>
+        </div>
+        @*<div class="registration_left">
+            <h2>Đã có tài khoản</h2>
+            <div class="registration_form" style="margin-top:29px;">
+            
+              @using (Html.BeginForm("dangnhap", "KhachHang", FormMethod.Post, new { @id = "loginForm" }))
+              {
+              
+                <fieldset id="body">
+                    <fieldset>
+                        <label for="email">Email Address</label>
+                        <input type="text" name="Email" id="email">
+                        @Html.ValidationMessage("Email")
+                    </fieldset>
+                    <fieldset>
+                        <label for="password">Password</label>
+                        <input type="password" name="Password" id="password">
+                        @Html.ValidationMessage("Password")
+                        <input type="hidden" name="Path" value="@ViewBag.path" />
+                    </fieldset>
+                    <input type="submit" id="login" value="Đăng nhập">
+                    <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+                </fieldset>
+                <span><a href="#">Quên mật khẩu?</a></span>
+              }
+              
+            </div>
+        </div>*@
+        <div class="clearfix"></div>
+    </div>
+   
+</div>

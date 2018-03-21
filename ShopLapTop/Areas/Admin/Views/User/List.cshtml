@@ -1,0 +1,26 @@
+﻿@using ShopLapTop.Areas.Admin.Models
+@model List<taikhoan>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<table border="1">
+    <tr>
+        <th>Tài khoản</th>
+        <th>Quyền</th>
+        <th>Trạng thái</th>
+        <th>Chỉnh sửa</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.username</td>
+            <td>@item.GroupID</td>
+            <td>@item.status</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = @item.username }) || @Html.ActionLink("Delete", "Delete", new { id = @item.username })</td>
+            
+        </tr>
+    }
+
+</table>

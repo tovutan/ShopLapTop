@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ShopLapTop.Areas.Admin.Models.Nhanhieu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="~/Admin/NhanHieu/themnh">Thêm nhãn hiệu</a>
+</p>
+<table class="table">
+    <tr>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Tenhieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hinh)
+        </th>
+        <th>
+            Chỉnh sửa
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenhieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hinh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Mahieu }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Mahieu }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Mahieu })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,260 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+@using ShopLapTop.Areas.Admin.Models
+@using ShopLapTop.Models
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Gretong a Ecommerce Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
+
+    <link href="~/Assets/client/css/Bootstrap.css" rel="stylesheet" />
+    <!-- jQuery (necessary JavaScript plugins) -->
+    <script type='text/javascript' src="/Assets/client/js/jquery-1.11.1.min.js"></script>
+    <!-- Custom Theme files -->   
+    <link href="~/Assets/client/css/Style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Assets/client/css/etalage.css">
+    <link href="~/Assets/client/css/tan.css" rel="stylesheet" />    
+    <link href="~/Assets/client/css/NewStyle.css" rel="stylesheet" />
+    <!-- Custom Theme files -->
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+    <!-- start menu -->
+    <link href="~/Assets/client/css/Megamenu.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Assets/client/js/megamenu.js"></script>
+    <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+    <script src="/Assets/client/js/jquery.etalage.min.js"></script>
+    <script src="/Assets/client/js/menu_jquery.js"></script>
+    <script src="/Assets/client/js/simpleCart.min.js"> </script>
+    <script>
+        jQuery(document).ready(function ($)
+        {
+            $('#etalage').etalage({
+                thumb_image_width: 196,
+                thumb_image_height: 196,
+                //source_image_width: 1000,
+                //source_image_height: 1100,
+                source_image_width: 350,
+                source_image_height:400,
+                show_hint: true,
+                click_callback: function (image_anchor, instance_id) {
+                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- header_top -->
+    <div class="top_bg">
+        <div class="container">
+            <div class="header_top">
+                <div class="top_right">
+                    <ul>
+                        @*<li><a href="#">help</a></li>|*@
+                        <li><a href="#">Liên Hệ</a></li>
+                        @*<li><a href="#">Delivery information</a></li>*@
+                    </ul>
+                </div>
+                <div class="top_left">
+                    <h2><span></span> Hãy gọi cho chúng tôi : 032 2352 782</h2>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- header -->
+    <div class="header_bg" style="background: white;">
+        <div class="container">
+            <div class="header">
+                <div class="head-t">
+                    <div class="col-xs-6 logo">
+                        <a href="~/TrangChu/Index" style="text-decoration:none;"><img src="#" class="img-responsive" alt="" />LAPTOP T&T </a>
+                        @*<H4>LAPTOP TAN</H4>*@
+                        @*<a href="#" style="text-decoration:none;"></a>*@
+                    </div>
+                    <!-- start header_right -->
+                    <div class="col-xs-6 header_right">
+                        <div class="rgt-bottom">                         
+                                @*<div class="login">
+                                    <div id="loginContainer">
+                                        <a href="~/KhachHang/dangnhap" id="loginButton" style="text-decoration: none;"><span>Đăng Nhập</span></a>
+                                     
+                                    </div>
+                                </div>*@
+                                @{
+                                    var session = (Khachhang)Session["kh"];
+                                    if (session == null)
+                                    {
+                                        <div class="visible-xs visible-sm visible-md visible-lg col-md-3 col-xs-6 log" style="padding-left:0px;margin-top:5px;">
+                                            @*<a style="text-decoration:none;" href="~/KhachHang/dangnhap?path=@Request.Url.AbsoluteUri">Đăng Nhập</a>*@
+                                            <a style="text-decoration:none;" href="~/KhachHang/dangnhap?path=@Request.Url.AbsoluteUri">Đăng Nhập</a>
+                                        </div>
+                                        <div class="visible-xs visible-sm visible-md visible-lg col-md-3 col-xs-6 reg">
+                                            <a href="~/KhachHang/dangki">Đăng Ký</a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="visible-xs visible-sm visible-md visible-lg col-md-3 col-xs-6 log" style="padding-left:0px;margin-top:5px;width:auto;">
+                                           <span>Xin chào:<span style="font-weight:bold; font-family:Roboto;">@session.Hoten</span> </span>
+                                        </div>
+                                        <div class="visible-xs visible-sm visible-md visible-lg col-md-3 col-xs-6 reg" style="margin-left:4%;" >
+                                            <a href="~/KhachHang/dangxuat">Đăng xuất</a>
+                                        </div>
+                                    }
+                                    //session.Hoten;
+                                }                                                                
+                            @{
+                                GioHang giohang = (GioHang)Session["GioHang"];
+
+                                //giohang.ds = new List<GioHang.MotSanPhamTrongGioHang>();
+                                //GioHang.MotSanPhamTrongGioHang i = new GioHang.MotSanPhamTrongGioHang();
+                                if (giohang != null)
+                                {
+                                    int soluong = 0;
+                                    foreach (var item in giohang.ds)
+                                    {
+                                        soluong += item.SoLuong;
+                                    }
+                                    <div class="cart box_1 visible-xs visible-sm visible-md visible-lg col-md-3 col-xs-6">
+                                        <a href="~/GioHang/Index" style="text-decoration:none;">
+                                            @*<h3> <span class="simpleCart_total">@giohang.ds.Count</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">999</span> Sản Phẩm)<img src="images/bag.png" alt=""></h3>*@
+                                            @*<h3 style="text-align:center;"> <span class="giohang">@String.Format("{0:0,0}đ",@tien)</span> (<span id="simpleCart_quantity" class="gh">@giohang.ds.Count</span> Sản Phẩm)<img src="~/Assets/hinhanh/logo/bag.png" style="width:18px;height:17px;" alt=""></h3>*@
+                                            <span id="simpleCart_quantity" style="font-family:Roboto; font-size:13px;" class="gh">@soluong Sản Phẩm</span>
+                                            <span><img src="~/Assets/hinhanh/logo/bag.png" style="width:18px;height:17px;" alt=""></span>
+                                        </a>
+                                        <p><a href="~/GioHang/xoagiohang" class="simpleCart_empty">(empty card)</a></p>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="cart box_1 visible-xs visible-sm visible-md visible-lg col-md-3 col-xs-6">
+                                        <a href="~/GioHang/Index" style="text-decoration:none;">
+                                            @*<h3> <span class="simpleCart_total">khong co</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">ko</span> Sản Phẩm)<img src="images/bag.png" alt=""></h3>*@
+                                            @*<h3 style="text-align:center;"> <span class="giohang">0đ</span><br /> (<span id="simpleCart_quantity" class="gh">0</span>Sản Phẩm)<img src="~/Assets/hinhanh/logo/bag.png" alt=""></h3>*@
+                                            <span id="simpleCart_quantity" style="font-family:Roboto; font-size:13px;" class="gh">0 Sản Phẩm</span>
+                                            <span><img src="~/Assets/hinhanh/logo/bag.png" style="width:18px;height:17px;" alt=""></span>
+                                        </a>
+                                        <p><a href="javascript:;" class="simpleCart_empty">(empty card)</a></p>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                }
+                            }                          
+                            @*<div class="create_btn visible-xs visible-sm visible-md visible-lg col-md-3 col-lg-3 col-xs-6">
+                                <a href="checkout.html">Kiểm Tra</a>
+                            </div>*@
+
+                            <div class="clearfix"> </div>
+                            @RenderSection("search", false)                         
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                    @*<div class="visible-xs col-xs-12 search">
+                        <form>
+                            <input type="text" value="" placeholder="search...">
+                            <input type="submit" value="">
+                        </form>
+                    </div>*@
+                    @RenderSection("search2", false)                 
+                </div>
+                <!-- start header menu -->
+                <div class="menu">
+                    @{
+                       Html.RenderAction("MainMenu","Root");
+                    }               
+                </div>
+
+            </div>
+        </div>        
+    </div>
+    <script>
+
+			jQuery(document).ready(function($) {
+
+				$(window).load(function(){
+				 	if($('.menu').length>0) {
+				 		var _top=$('.menu').offset().top;
+				 		$(window).scroll(function(evt) {
+				 			var _y=$(window).scrollTop();
+				 			if(_y>_top) {
+				 				$('.menu').addClass('fixed');
+				 			}
+				 			else {
+				 				$('.menu').removeClass('fixed');
+				 			}
+				 		})
+				 	}
+				});
+			});
+    </script>
+
+
+
+
+    <div class="special">
+        <div class="container">            
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 cust">
+                <h4>Hỗ trợ</h4>
+                <li><a href="#">Trung tâm hỗ trợ</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Mua như thế nào</a></li>
+                <li><a href="#">Giao hàng</a></li>
+            </div>
+            <div class="col-md-2 abt">
+                <h4>Về chúng tôi</h4>
+                <li><a href="#">Cửa hàng chúng tôi</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#l">Liên hệ</a></li>
+            </div>
+            <div class="col-md-2 myac">
+                <h4>Tài khoản của tôi</h4>
+                <li><a href="#">Đăng ký</a></li>
+                <li><a href="#">Giỏ hàng của tôi</a></li>
+                <li><a href="#">LỊch sử đặt hàng</a></li>
+                <li><a href="#l">Thanh toán</a></li>
+            </div>
+            <div class="col-md-5 our-st">
+                <div class="our-left">
+                    <h4>Địa chỉ</h4>
+                </div>
+                @*<div class="our-left1">
+                    <div class="cr_btn">
+                        <a href="#">SOLO</a>
+                    </div>
+                </div>
+                <div class="our-left1">
+                    <div class="cr_btn1">
+                        <a href="#">BOGOR</a>
+                    </div>
+                </div>*@
+                <div class="clearfix"> </div>
+                <li><i class="add"> </i>192 Hàm Tử</li>
+                <li><i class="phone"> </i>025-2839341</li>
+                <li><a href="mailto:info@example.com"><i class="mail"> </i>info@sitename.com </a></li>
+
+            </div>
+            <div class="clearfix"> </div>
+            <p>Copyrights © 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Common\bin\Debug\Common.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Common\bin\Debug\Common.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Common\obj\Debug\Common.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Common\obj\Debug\Common.pdb

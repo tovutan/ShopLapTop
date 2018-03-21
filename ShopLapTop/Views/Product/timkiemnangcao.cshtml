@@ -1,0 +1,274 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<ShopLapTop.Areas.Admin.Models.Sanpham>
+@{
+    ViewBag.Title = "timkiemnangcao";
+    Layout = "~/Views/Shared/_KhachhangLayout.cshtml";
+}
+
+<div class="women_main">
+<!-- start content -->
+    <div class="row single">
+        <div class="col-md-9 det" style="padding-right:0px;">
+            <div class="row">
+                <div class="col-sm-8">
+                    @using (Html.BeginForm("timkiemnangcao", "Product", FormMethod.Post))
+                    {
+                        <div class="visible-xs visible-sm visible-md visible-lg  search" style="width:100%;">
+                            <input type="text" value="@ViewBag.ten" name="ten" placeholder="search...">
+                        </div>
+
+                         <div>                          
+                                <table>
+                                    <tr>
+                                        <td><span>Giá</span></td>
+                                        <td>
+                                            @Html.DropDownList("Gia")                                            
+                                        </td>
+                                        <td><span style="color:indianred">CPU </span></td>
+                                        <td>
+                                            @Html.DropDownList("core")
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <input type="submit" name="name" value="Tìm" style="margin-top:4%;">
+                                        </td>
+                                    </tr>
+                                </table>
+                          </div>
+                    }
+                    @{
+                        int i = 0;
+                     }
+                    
+                </div>
+            </div>
+            @if (Model != null)
+            {
+                <h3>Đã tìm thấy @Model.TotalItemCount sản phẩm ahihi</h3>
+            }
+            <div class="row">
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        i++;
+                        <div class="col-sm-3" @*style="width:218px;height:300px;"*@>
+                            <div class="thumbnail" style="height:300px;">
+                                <a href="~/Product/chitietsanpham/@item.MaSP" style="text-decoration: none;">
+                                    <div class="image" style="width:196px;height:180px;margin-left:auto;margin-right:auto;">
+                                        <img src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" style="width:100%" alt="Image">
+                                    </div>
+                                    <div class="caption" style="text-align:left; height:150px;">
+                                        @if (item.TenSP != null)
+                                        {
+                                            if (item.TenSP.Count() <= 36)
+                                            {
+                                                <br />
+                                                <span style="font-size:13px;font-family: 'Roboto', arial; display:block;text-align:center;">
+                                                    @item.TenSP
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span style="font-size:13px;font-family: 'Roboto', arial; display:block;text-align:center;">
+                                                    @item.TenSP
+                                                </span>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            item.TenSP = null;
+                                        }
+
+                                        <span style="font-size:11px;font-family: 'Open Sans', arial;display:block;text-align:center;">
+                                            @{
+                                                if (item.cpu != null)
+                                                {
+                                                    if (item.cpu.Length < 12)
+                                                    {
+                                                        @item.cpu;
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.cpu.Substring(12, 10);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @item.cpu;
+                                                }
+                                            }  | @{
+                                                if (item.ram != null)
+                                                {
+                                                    if (item.ram.Length < 9)
+                                                    {
+                                                        @item.ram;
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.ram.Substring(0, 9);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    @item.ram;
+                                                }
+                                            }  |
+                                            @{
+                                                if (item.vga != null)
+                                                {
+                                                    if (item.vga.Length < 8)
+                                                    {
+                                                        @item.vga;
+                                                    }
+                                                    else if (item.vga.Contains("Quadro"))
+                                                    {
+                                                        if (item.vga.Length < 22)
+                                                        {
+                                                            @item.vga;
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.vga.Substring(22, 17);
+                                                        }
+                                                    }
+                                                    else if (item.vga.Contains("Ti"))
+                                                    {
+
+                                                        if (item.vga.Length < 16)
+                                                        {
+                                                            @item.vga;
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.vga.Substring(16, 14);
+                                                        }
+                                                    }
+                                                    else if (item.vga.Contains("GTX"))
+                                                    {
+                                                        if (item.vga.Length < 16)
+                                                        {
+                                                            @item.vga;
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.vga.Substring(16, 13);
+                                                        }
+                                                    }
+                                                    else if (item.vga.Contains("GTX") && (item.vga.Count() <= 48))
+                                                    {
+                                                        if (item.vga.Length < 16)
+                                                        {
+                                                            @item.vga;
+                                                        }
+                                                        else
+                                                        {
+                                                            @item.vga.Substring(16, 12);
+                                                        }
+                                                    }
+                                                    else if (item.vga.Contains("AMD") && item.hdd.Contains("1TB"))
+                                                    {
+                                                        @*@item.vga.Substring(0, 23);*@
+                                                        @item.hdd.Substring(0, 8);
+                                                    }
+                                                    else if (item.vga.Contains("AMD") && !item.hdd.Contains("1TB"))
+                                                    {
+                                                        @item.hdd.Substring(0, 9);
+                                                    }
+                                                    else if (item.vga.Contains("820M"))
+                                                    {
+                                                        @*@item.vga.Substring(16, 14);*@
+                                            if (item.ssd != null)
+                                            {
+                                                if (@item.ssd.Length < 9)
+                                                {
+                                                    @item.ssd;
+                                                }
+                                                else
+                                                {
+                                                    @item.ssd.Substring(0, 9);
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                if (item.hdd.Contains("1TB"))
+                                                {
+                                                    if (item.hdd.Length < 8)
+                                                    {
+                                                        @item.hdd;
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.hdd.Substring(0, 8);
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    if (item.hdd.Length < 9)
+                                                    {
+                                                        @item.hdd;
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.hdd.Substring(0, 9);
+                                                        }
+
+                                                    }
+
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (item.ssd != null)
+                                                {
+                                                    @item.ssd.Substring(0, 9);
+                                                        }
+                                                        else
+                                                        {
+                                                            if (item.hdd.Contains("1TB"))
+                                                            {
+                                                                @item.hdd.Substring(0, 8);
+                                                            }
+                                                            else
+                                                            {
+                                                                @item.hdd.Substring(0, 10);
+                                                            }
+
+                                                        }
+                                                    }
+
+                                                }
+                                            }
+
+                                        </span>
+
+
+                                        <h5>@String.Format("{0:0,0}đ", @item.Giaban)</h5>
+                                    </div>
+                                </a>
+                                <br />
+                            </div>
+                        </div>
+                     }
+                                               
+                 }                                            
+            </div>
+            <div>
+                @if (Model != null)
+                {
+                    @Html.PagedListPager(Model,page=>Url.Action("timkiemnangcao",new { page=page,tim=ViewBag.ten,gia=ViewBag.tien,cpu = ViewBag.cpu }))
+                }          
+            </div>
+        </div>
+   
+        <div class="clearfix"></div>
+    </div>
+<!-- end content -->
+</div>
+<div class="clearfix"></div>
+

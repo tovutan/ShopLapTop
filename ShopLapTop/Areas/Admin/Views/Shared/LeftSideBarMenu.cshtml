@@ -1,0 +1,21 @@
+﻿@using ShopLapTop.Areas.Admin.Models
+
+<li>
+    <a href="#">
+        <i class="fa fa-bar-chart-o fa-fw"></i> Nhãn Hiệu<span class="fa arrow"></span>
+    </a>
+    <ul class="nav nav-second-level">
+        <li><a href="@(Url.Action("hiennh", "NhanHieu", new { Area = "Admin" }))"><i class="fa fa-list"></i>Danh sách</a></li>
+        <li><a href="@(Url.Action("themnh", "NhanHieu", new { Area = "Admin" }))"><i class="fa fa-plus"></i>Thêm mới</a></li>
+    </ul>
+</li>
+
+<li>
+    <a href="#">
+        <i class="fa fa-bar-chart-o fa-fw"></i> Tài khoản<span class="fa arrow"></span>
+    </a>
+    <ul class="nav nav-second-level">
+        <li><a href="@(Url.Action("List", "User", new { Area = "Admin" }))"><i class="fa fa-list"></i>Danh sách</a></li>
+        <li><a href="@(Url.Action("Create", "User", new { Area = "Admin" }))"><i class="fa fa-plus"></i>Thêm mới</a></li>
+    </ul>
+</li>
