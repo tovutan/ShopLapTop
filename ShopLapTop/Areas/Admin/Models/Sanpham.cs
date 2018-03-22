@@ -4,6 +4,7 @@ namespace ShopLapTop.Areas.Admin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -128,6 +129,10 @@ namespace ShopLapTop.Areas.Admin.Models
         [Required(ErrorMessage = "không được để trống")]
         public int? Mahieu { get; set; }
 
+        // đếm like
+        [DefaultValue(0)] 
+        public int? LikeCount { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HoaDon> CT_HoaDon { get; set; }
 
@@ -138,5 +143,17 @@ namespace ShopLapTop.Areas.Admin.Models
         //[DataType(DataType.Currency, ErrorMessage = "Chỉ được nhập số")]
         //[Required(ErrorMessage = "không được để trống")]
         public virtual Nhanhieu Nhanhieu { get; set; }
+
+        
+
+
+        // lấy Comment
+        public virtual ICollection<Comment>  comment{get;set;}
+        
+        // lấy Reply
+        public virtual ICollection<Reply> Replies { get; set; }
+
+        // Lấy ProductLike
+        public virtual ICollection<ProductLike> ProductLike { get; set; }
     }
 }

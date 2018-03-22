@@ -235,6 +235,79 @@
     <Content Include="Assets\admin\vendor\morrisjs\morris.min.js" />
     <Content Include="Assets\admin\vendor\raphael\raphael.js" />
     <Content Include="Assets\admin\vendor\raphael\raphael.min.js" />
+    <Content Include="Assets\client\css\Bootstrap.css" />
+    <Content Include="Assets\client\css\etalage.css" />
+    <Content Include="Assets\client\css\Megamenu.css" />
+    <Content Include="Assets\client\css\NewStyle.css" />
+    <Content Include="Assets\client\css\Style.css" />
+    <Content Include="Assets\client\css\tan.css" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-black-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-bold-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-heavy-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-light-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-medium-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-regular-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-semibold-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-thin-webfont.svg" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-ultralight-webfont.svg" />
+    <Content Include="Assets\client\images\1.jpg" />
+    <Content Include="Assets\client\images\10.jpg" />
+    <Content Include="Assets\client\images\11.jpg" />
+    <Content Include="Assets\client\images\2.jpg" />
+    <Content Include="Assets\client\images\3.jpg" />
+    <Content Include="Assets\client\images\4.jpg" />
+    <Content Include="Assets\client\images\5.jpg" />
+    <Content Include="Assets\client\images\6.jpg" />
+    <Content Include="Assets\client\images\7.jpg" />
+    <Content Include="Assets\client\images\8.jpg" />
+    <Content Include="Assets\client\images\9.jpg" />
+    <Content Include="Assets\client\images\arrows.png" />
+    <Content Include="Assets\client\images\arrwss.png" />
+    <Content Include="Assets\client\images\art.png" />
+    <Content Include="Assets\client\images\art1.png" />
+    <Content Include="Assets\client\images\bag.png" />
+    <Content Include="Assets\client\images\bag1.png" />
+    <Content Include="Assets\client\images\cart-c.png" />
+    <Content Include="Assets\client\images\close_1.png" />
+    <Content Include="Assets\client\images\d1.jpg" />
+    <Content Include="Assets\client\images\d2.jpg" />
+    <Content Include="Assets\client\images\d3.jpg" />
+    <Content Include="Assets\client\images\d4.jpg" />
+    <Content Include="Assets\client\images\facebook.png" />
+    <Content Include="Assets\client\images\gift.jpg" />
+    <Content Include="Assets\client\images\giphy.gif" />
+    <Content Include="Assets\client\images\img-sprite.png" />
+    <Content Include="Assets\client\images\line.png" />
+    <Content Include="Assets\client\images\login.jpg" />
+    <Content Include="Assets\client\images\logo.png" />
+    <Content Include="Assets\client\images\phon.png" />
+    <Content Include="Assets\client\images\right_arrow.png" />
+    <Content Include="Assets\client\images\search.png" />
+    <Content Include="Assets\client\images\soc_icons.png" />
+    <Content Include="Assets\client\images\s_icon1.png" />
+    <Content Include="Assets\client\images\s_icon2.png" />
+    <Content Include="Assets\client\images\s_icon3.png" />
+    <Content Include="Assets\client\images\tick.png" />
+    <Content Include="Assets\client\images\w1.jpg" />
+    <Content Include="Assets\client\images\w10.jpg" />
+    <Content Include="Assets\client\images\w11.jpg" />
+    <Content Include="Assets\client\images\w12.jpg" />
+    <Content Include="Assets\client\images\w2.jpg" />
+    <Content Include="Assets\client\images\w3.jpg" />
+    <Content Include="Assets\client\images\w4.jpg" />
+    <Content Include="Assets\client\images\w5.jpg" />
+    <Content Include="Assets\client\images\w6.jpg" />
+    <Content Include="Assets\client\images\w7.jpg" />
+    <Content Include="Assets\client\images\w8.jpg" />
+    <Content Include="Assets\client\images\w9.jpg" />
+    <Content Include="Assets\client\js\jquery-1.11.1.min.js" />
+    <Content Include="Assets\client\js\jquery-ui.min.js" />
+    <Content Include="Assets\client\js\jquery.etalage.min.js" />
+    <Content Include="Assets\client\js\jquery.jscrollpane.min.js" />
+    <Content Include="Assets\client\js\megamenu.js" />
+    <Content Include="Assets\client\js\menu_jquery.js" />
+    <Content Include="Assets\client\js\simpleCart.min.js" />
     <Content Include="Assets\hinhanh\logo\bag.png" />
     <Content Include="Assets\hinhanh\sanpham\220x200-acer as a515 51 39gt_lager.png" />
     <Content Include="Assets\hinhanh\sanpham\220x200-acer predator helios 300 g3 572 70j1_lager.png" />
@@ -308,9 +381,12 @@
     <Compile Include="Areas\Admin\Dao\InsertProduct.cs" />
     <Compile Include="Areas\Admin\Dao\taikhoandangnhap.cs" />
     <Compile Include="Areas\Admin\Dao\UserDao.cs" />
+    <Compile Include="Areas\Admin\DTO\CommentLikeViewModel.cs" />
     <Compile Include="Areas\Admin\Kiemloi\kiemtra.cs" />
     <Compile Include="Areas\Admin\Lopdungchung\bodautiengviet.cs" />
     <Compile Include="Areas\Admin\Models\ChildCategory.cs" />
+    <Compile Include="Areas\Admin\Models\Comment.cs" />
+    <Compile Include="Areas\Admin\Models\CommentLike.cs" />
     <Compile Include="Areas\Admin\Models\Credential.cs" />
     <Compile Include="Areas\Admin\Models\CT_HoaDon.cs" />
     <Compile Include="Areas\Admin\Models\Hoadon.cs" />
@@ -318,12 +394,17 @@
     <Compile Include="Areas\Admin\Models\laptop.cs" />
     <Compile Include="Areas\Admin\Models\Loai.cs" />
     <Compile Include="Areas\Admin\Models\Nhanhieu.cs" />
+    <Compile Include="Areas\Admin\Models\ProductLike.cs" />
+    <Compile Include="Areas\Admin\Models\Reply.cs" />
+    <Compile Include="Areas\Admin\Models\ReplyLike.cs" />
     <Compile Include="Areas\Admin\Models\Role.cs" />
     <Compile Include="Areas\Admin\Models\Sanpham.cs" />
     <Compile Include="Areas\Admin\Models\taikhoan.cs" />
     <Compile Include="Areas\Admin\Models\UserGroup.cs" />
+    <Compile Include="Areas\Admin\DTO\CommentViewModel.cs" />
     <Compile Include="Common\CommonConstants.cs" />
     <Compile Include="Common\HasCredentialAttribute.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -335,6 +416,11 @@
     </Compile>
     <Compile Include="LopMoRong\GuiMail.cs" />
     <Compile Include="LopMoRong\Khachhangdangnhap.cs" />
+    <Compile Include="Migrations\201803210553430_Database.cs" />
+    <Compile Include="Migrations\201803210553430_Database.Designer.cs">
+      <DependentUpon>201803210553430_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -420,6 +506,52 @@
     <Content Include="Areas\Admin\Views\Shared\401.cshtml" />
     <Content Include="Areas\Admin\Views\User\List.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\LeftSideBarMenu.cshtml" />
+    <Content Include="Views\Shared\_MyComments.cshtml" />
+    <Content Include="Views\Shared\_MySubComments.cshtml" />
+    <Content Include="Assets\client\images\Thumbs.db" />
+    <Content Include="Assets\client\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\client\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\client\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-black-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-black-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-black-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-black-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-bold-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-bold-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-bold-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-bold-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-heavy-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-heavy-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-heavy-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-heavy-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-light-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-light-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-light-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-light-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-medium-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-medium-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-medium-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-medium-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-regular-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-regular-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-regular-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-regular-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-semibold-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-semibold-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-semibold-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-semibold-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-thin-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-thin-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-thin-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-thin-webfont.woff2" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-ultralight-webfont.eot" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-ultralight-webfont.ttf" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-ultralight-webfont.woff" />
+    <Content Include="Assets\client\fonts\vip\sfuidisplay-ultralight-webfont.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -430,7 +562,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Assets\client\" />
+    <Folder Include="Areas\Migrations\" />
+    <Folder Include="Views\Comments\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Command\Command.csproj">
@@ -441,6 +574,11 @@
       <Project>{7599d781-ab49-4c72-99fd-8cecceea0c22}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803210553430_Database.resx">
+      <DependentUpon>201803210553430_Database.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

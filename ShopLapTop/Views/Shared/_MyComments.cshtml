@@ -1,0 +1,125 @@
+﻿
+@model IQueryable<ShopLapTop.Areas.Admin.DTO.CommentViewModel>
+@using ShopLapTop.Areas.Admin.DTO
+@if (Model != null)
+{
+    foreach (CommentViewModel comment in Model)
+    {
+        <div class="row" style="width: 100.3%; border-bottom: 1px solid #d2cece; margin-right: -14px; margin-left: -1px;">
+            <div class="col-md-4" style="width: 21%;">
+                @*<div class="userProfil" style="margin-left: 9px; margin-top: 12px;">
+                    <img src="~/Images/@comment.Users.imageProfile" class="img-circle" style="width: 46px; height: 53px; border: 1px solid #bcb8b8;" />
+                    <a href="#" style="margin-left: 5px; font-weight: bold; font-size: 13px;"> @comment.Users.Username </a>
+                </div>*@
+            </div>
+            <div class="col-md-7" style="width: 60%;">
+                <div class="commentDetails">
+                    <p style="margin-top: 27px; font-size: 13px; color: #9c9898;"> @comment.Content </p>
+                    @*<a href="#" class="Reply" data-id="@comment.ComID">Reply</a>*@
+                    <a href="#" class="Reply" data-id="@comment.ID">Reply</a>
+
+                    <div class="Comment" data-id="@comment.ID"></div>
+
+                    @*<div class="@string.Format("{0}_{1}", "ReplayComments", comment.ID)" style="display:none;">*@
+                    <div class="@string.Format("{0}_{1}", "ReplayComments", comment.ID)" style="display:block;">
+
+                        <div class="@string.Format("{0}_{1}","ReplayCommentInput",comment.ID)" style="margin-left: 3%;  margin-bottom: 5px; margin-top: 8px; display:none;">
+                            <input type="text" id="@string.Format("{0}_{1}", "inputReplay", comment.ID)" class="form-control" placeholder="Add a Comment ..." style="display: inline;" />
+                            <button type="button" class="btn btn-default ReplyAddComment" data-id="@comment.ID"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1" style="width: 19%;">
+                <div class="commentDate">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    <time class="timeago" style="margin-top: 27px; font-size: 13px; color: #9c9898;  margin-left: 4px;" datetime="@comment.Datetime">@comment.Datetime</time>
+
+                </div>
+            </div>
+        </div>
+
+    }
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        //Get All ReplyComments
+        // $(".Reply").on('click', function (e) {
+
+        //$('.ReplayComments_' + Comment_ID).toggle();
+        $(".Reply").on('click',function (e) {
+            e.preventDefault();
+        //    var Comment_ID = $(this).attr('data-id');
+           
+        //    $('.ReplayCommentInput_'+Comment_ID).toggle();
+        //});
+
+
+        //$('.Comment').show(function () {
+            var Comment_ID = $(this).attr('data-id');
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("GetListSubComments", "Comments")',
+                data: { Comment_ID },
+                success: function (response) {
+
+                    if ($("div").hasClass('zoneReply_' + Comment_ID + '')) {
+                        $('div [class=zoneReply_' + Comment_ID + ']').remove();
+                    }
+
+                    var selReply = $("<div>").addClass("zoneReply_" + Comment_ID);
+                    selReply.append(response);// chèn thêm nội dung và thường được thêm vào cuối.
+                    selReply.prependTo($('.ReplayComments_' + Comment_ID)); // thêm vào đầu thành phần đã có trước đó.
+
+                    $('.ReplayComments_' + Comment_ID).show();
+
+                },
+                error: function (response) {
+                    alert("Error GetListSubComments" + respone);
+                }
+
+            });
+        });
+            //var Comment_ID = $(this).attr('data-id');
+           
+    
+
+        //Add Reply Comment
+        $('.ReplyAddComment').on('click', function () {
+            //var ComID = $(this).attr('data-id');
+            var ID = $('.ReplyAddComment').attr('data-id');
+            var Content = $('#inputReplay_' + ID).val(); // lấy giá trị ComID tức comment.ID
+            var dateTimeNow = new Date();
+
+            var data = {
+                Content: Content,
+                DateTime: dateTimeNow.toLocaleString()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AddSubComment","Comments")',
+                data: { data, ID},
+                success: function (response)
+                {
+                    if ($('div').hasClass('zoneReply_' + ID + ''))
+                    {
+                        $('div [ class=zoneReply_' + ID + ']').remove();
+                    }
+                    var selReply = $("<div>").addClass('zoneReply_' + ID);
+
+                    selReply.append(response) // chèn thêm nội dung và thường là ở cuối.
+                    selReply.prependTo($(".ReplayComments_" + ID)); // thêm vào đầu danh sách đã có trước đó.
+
+                    $('.ReplayComments_' + ID).show();
+                },
+                error: function (response)
+                {
+                    alert("Error AddSubComment" + response);
+                }
+            });
+        });
+        (window.jQuery);
+        //jQuery("time.timeago").timeago();
+    })
+</script>

@@ -11,23 +11,33 @@ namespace ShopLapTop
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+           routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+
+            //routes.MapRoute(
+            //    "Comment",
+            //    "{model}/{MaSP}",
+            //    new { controller = "Comments", action = "AddComment", queryValues = UrlParameter.Optional },
+            //    new[] { "ShopLapTop.Controllers" }
+            //    );
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
+                 "Default",
+                 "{controller}/{action}/{id}",
                 //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                defaults: new { controller = "TrangChu", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] {"ShopLapTop.Controllers"}
+                 new { controller = "TrangChu", action = "Index", id = UrlParameter.Optional },
+                new[] {"ShopLapTop.Controllers"}
             );
 
             routes.MapRoute(
-                name: "Product search",
-                url: "{controller}/{action}/{id}",
+                 "Product search",
+                "{controller}/{action}/{id}",
                 //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                defaults: new { controller = "Product", action = "tim", id = UrlParameter.Optional },
-                namespaces: new[] { "ShopLapTop.Controllers" }
+                new { controller = "Product", action = "tim", id = UrlParameter.Optional },
+                new[] { "ShopLapTop.Controllers" }
             );
+
+            
 
             routes.MapRoute(
                name: "Product Detail",

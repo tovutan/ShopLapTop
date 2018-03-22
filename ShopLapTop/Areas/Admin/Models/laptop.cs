@@ -1,4 +1,4 @@
-namespace ShopLapTop.Areas.Admin.Models
+﻿namespace ShopLapTop.Areas.Admin.Models
 {
     using System;
     using System.Data.Entity;
@@ -24,6 +24,14 @@ namespace ShopLapTop.Areas.Admin.Models
         public virtual DbSet<Credential> Credentials { get; set; }
         public virtual DbSet<ChildCategory> ChildCategories { get; set;}
 
+        // Thêm Dữ liệu để tạo Comment
+        public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<CommentLike> CommentLikes { get; set; }
+        public virtual DbSet<Reply> Replies { get; set; }
+        public virtual DbSet<ReplyLike> ReplyLikes { get; set; }
+        public virtual DbSet<ProductLike> ProductLikes { get; set; }
+
+     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CT_HoaDon>()
