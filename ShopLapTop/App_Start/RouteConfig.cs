@@ -21,6 +21,14 @@ namespace ShopLapTop
             //    new[] { "ShopLapTop.Controllers" }
             //    );
 
+
+            //routes.MapRoute(
+            //    "SubComment",              
+            //    "{controller}/{action}/ID",
+            //    new { controler="Comments",action= "GetListSubComments", queryValues = UrlParameter.Optional },
+            //    new[] { "ShopLapTop.Controllers"}
+            //    );
+
             routes.MapRoute(
                  "Default",
                  "{controller}/{action}/{id}",

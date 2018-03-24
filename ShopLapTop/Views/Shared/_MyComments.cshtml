@@ -14,20 +14,21 @@
             </div>
             <div class="col-md-7" style="width: 60%;">
                 <div class="commentDetails">
-                    <p style="margin-top: 27px; font-size: 13px; color: #9c9898;"> @comment.Content </p>
+                    <p style="margin-top: 27px; font-size: 13px; color: #9c9898;">@comment.Content</p>
                     @*<a href="#" class="Reply" data-id="@comment.ComID">Reply</a>*@
                     <a href="#" class="Reply" data-id="@comment.ID">Reply</a>
 
-                    <div class="Comment" data-id="@comment.ID"></div>
+                   
 
                     @*<div class="@string.Format("{0}_{1}", "ReplayComments", comment.ID)" style="display:none;">*@
                     <div class="@string.Format("{0}_{1}", "ReplayComments", comment.ID)" style="display:block;">
 
                         <div class="@string.Format("{0}_{1}","ReplayCommentInput",comment.ID)" style="margin-left: 3%;  margin-bottom: 5px; margin-top: 8px; display:none;">
-                            <input type="text" id="@string.Format("{0}_{1}", "inputReplay", comment.ID)" class="form-control" placeholder="Add a Comment ..." style="display: inline;" />
+                            <textarea type="text" rows="2" id="@string.Format("{0}_{1}", "inputReplay", comment.ID)" class="form-control" placeholder="Add a Comment ..." style="display: inline;" ></textarea>
                             <button type="button" class="btn btn-default ReplyAddComment" data-id="@comment.ID"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
                         </div>
                     </div>
+                    <div class="SubComment" data-id="@comment.ID"></div>
                 </div>
             </div>
             <div class="col-md-1" style="width: 19%;">
@@ -49,30 +50,37 @@
         //$('.ReplayComments_' + Comment_ID).toggle();
         $(".Reply").on('click',function (e) {
             e.preventDefault();
-        //    var Comment_ID = $(this).attr('data-id');
-           
-        //    $('.ReplayCommentInput_'+Comment_ID).toggle();
-        //});
+            var id = $(this).attr('data-id');
+            
+            $('.ReplayCommentInput_' + id).toggle();
+        });
 
 
-        //$('.Comment').show(function () {
-            var Comment_ID = $(this).attr('data-id');
+        $('.SubComment').show(function () {
+            // var ID = $(this).attr('data-id');
+            //var id = $('.SubComment').attr('data-id');
+            var id = $(this).attr('data-id');
+            var selReply = $("<div>").addClass("zoneReply_" + id); 
             $.ajax({
                 type: 'GET',
                 url: '@Url.Action("GetListSubComments", "Comments")',
-                data: { Comment_ID },
+                @*url:'@Url.RouteUrl(new {action= "GetListSubComments", controller= "Comments" } )',*@
+                data: { ID: id },
                 success: function (response) {
 
-                    if ($("div").hasClass('zoneReply_' + Comment_ID + '')) {
-                        $('div [class=zoneReply_' + Comment_ID + ']').remove();
+                    if ($("div").hasClass('zoneReply_' + id + '')) {
+                        $('div [class=zoneReply_' + id + ']').remove();
                     }
-
-                    var selReply = $("<div>").addClass("zoneReply_" + Comment_ID);
+                    selReply = $("<div>").addClass("zoneReply_" + id);
+                    //var selReply = $('.Comment');
                     selReply.append(response);// chèn thêm nội dung và thường được thêm vào cuối.
-                    selReply.prependTo($('.ReplayComments_' + Comment_ID)); // thêm vào đầu thành phần đã có trước đó.
+                    //selReply.prependTo($('.ReplayComments_' + id)); // thêm vào đầu thành phần đã có trước đó.
+                    selReply.appendTo($('.ReplayComments_' + id));
+                    $('.ReplayComments_' + id).show();
 
-                    $('.ReplayComments_' + Comment_ID).show();
-
+                },
+                complete:function() {
+                    $('.ReplayCommentInput_' + id).hide();
                 },
                 error: function (response) {
                     alert("Error GetListSubComments" + respone);
@@ -86,8 +94,8 @@
 
         //Add Reply Comment
         $('.ReplyAddComment').on('click', function () {
-            //var ComID = $(this).attr('data-id');
-            var ID = $('.ReplyAddComment').attr('data-id');
+            var ID = $(this).attr('data-id');
+           // var ID = $('.ReplyAddComment').attr('data-id');
             var Content = $('#inputReplay_' + ID).val(); // lấy giá trị ComID tức comment.ID
             var dateTimeNow = new Date();
 
@@ -112,6 +120,10 @@
                     selReply.prependTo($(".ReplayComments_" + ID)); // thêm vào đầu danh sách đã có trước đó.
 
                     $('.ReplayComments_' + ID).show();
+                },
+                complete: function () {
+                    //$('.ReplyAddComment_' + ID).val("");
+                    $('#inputReplay_' + ID).val("");
                 },
                 error: function (response)
                 {

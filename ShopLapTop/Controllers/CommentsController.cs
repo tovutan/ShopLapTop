@@ -63,17 +63,20 @@ namespace ShopLapTop.Controllers
         }
 
         // lấy danh sách SubComments
-        public PartialViewResult GetListSubComments(int Comment_ID)
+        //[HttpGet]
+        public PartialViewResult GetListSubComments(int ID)
         {
-            IQueryable<CommentLikeViewModel> subComments = lt.CommentLikes.Where(x => x.CommentID == Comment_ID).Select(p => new CommentLikeViewModel
+            // Lấy ra danh sách SubComment theo ID của Comment.
+            IQueryable<CommentLikeViewModel> item = lt.CommentLikes.Where(x => x.ID == ID).Select(p => new CommentLikeViewModel
             {
                 CommentID=p.CommentID,
                 UserName=p.UserName,
                 Content=p.Content,
+                DateTime=p.DateTime,
                 Like=p.Like,
                 Dislike=p.Dislike,              
-            }).AsQueryable();
-            return PartialView("~/Views/Shared/_MySubComments.cshtml",subComments);
+            }).AsQueryable().Distinct();
+            return PartialView("~/Views/Shared/_MySubComments.cshtml",item);
         }
 
         // thêm SubComment

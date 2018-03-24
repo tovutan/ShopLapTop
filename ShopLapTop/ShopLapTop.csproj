@@ -140,6 +140,7 @@
     <Content Include="Assets\admin\dist\css\sb-admin-2.min.css" />
     <Content Include="Assets\admin\dist\js\sb-admin-2.js" />
     <Content Include="Assets\admin\dist\js\sb-admin-2.min.js" />
+    <Content Include="Assets\admin\js\Comment.js" />
     <Content Include="Assets\admin\js\sb-admin-2.js" />
     <Content Include="Assets\admin\pages\forms.html" />
     <Content Include="Assets\admin\pages\index.html" />

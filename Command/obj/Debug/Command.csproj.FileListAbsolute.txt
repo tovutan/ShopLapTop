@@ -2,4 +2,3 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Command\bin\Debug\Command.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Command\bin\Debug\Command.pdb
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Command\obj\Debug\Command.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Command\obj\Debug\Command.pdb
-D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Command\obj\Debug\Command.csprojResolveAssemblyReference.cache
