@@ -1,9 +1,62 @@
 ﻿
 @model IQueryable<ShopLapTop.Areas.Admin.DTO.CommentViewModel>
 @using ShopLapTop.Areas.Admin.DTO
+@using Command
+
+<style>
+
+     .fshop-cmt-main {
+        max-width: 406px;
+        /*max-height: 500px;*/
+        min-height: 1px;
+        overflow: auto;
+        position: relative;
+    }
+
+    #ReplyInput {
+        position: relative;
+        margin-left: 0px;
+    }
+
+    .ReplyAddComment {
+        position: relative;
+        bottom: 20px;
+        right: 60px;
+    }
+
+    .fcm-login {
+        width:76%;
+    }
+
+    .content {
+        /*margin-left: 10px;*/
+        resize: none;
+        width: 76%;
+        margin-bottom: 0px;
+        height:80px;
+        padding: 6px 50px 6px 12px;
+    }
+
+    .information {
+        margin-left: 10px;
+    }
+
+    .fcm-login-close {
+        margin-left: 306px;
+        /*position: absolute;*/
+        top: -5px;
+        right: 3px;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 20px;
+        color: #ccc;
+    }
+
+</style>
+
 @if (Model != null)
 {
-    foreach (CommentViewModel comment in Model)
+    foreach (CommentViewModel comment in Model.Distinct())
     {
         <div class="row" style="width: 100.3%; border-bottom: 1px solid #d2cece; margin-right: -14px; margin-left: -1px;">
             <div class="col-md-4" style="width: 21%;">
@@ -23,31 +76,82 @@
                     @*<div class="@string.Format("{0}_{1}", "ReplayComments", comment.ID)" style="display:none;">*@
                     <div class="@string.Format("{0}_{1}", "ReplayComments", comment.ID)" style="display:block;">
 
-                        <div class="@string.Format("{0}_{1}","ReplayCommentInput",comment.ID)" style="margin-left: 3%;  margin-bottom: 5px; margin-top: 8px; display:none;">
-                            <textarea type="text" rows="2" id="@string.Format("{0}_{1}", "inputReplay", comment.ID)" class="form-control" placeholder="Add a Comment ..." style="display: inline;" ></textarea>
-                            <button type="button" class="btn btn-default ReplyAddComment" data-id="@comment.ID"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
-                        </div>
-                    </div>
-                    <div class="SubComment" data-id="@comment.ID"></div>
-                </div>
-            </div>
+                        <div class="fshop-cmt-main">
+                            @*<div> thêm vào</div>*@
+                            <div class="clearfix">
+                                @*thêm vào*@
+
+
+                                <div class="@string.Format("{0}_{1}","ReplayCommentInput",comment.ID)" id="ReplyInput" style="margin-left: 3%;  margin-bottom: 5px; margin-top: 8px; display:none;">
+                                    <textarea type="text" rows="3" id="@string.Format("{0}_{1}", "inputReply", comment.ID)" data-id="@comment.ID" class="form-control content" placeholder="Add a Comment ..." style="display: inline;"></textarea>
+                                    <button type="button" id="@string.Format("{0}_{1}","ReplyAddComment",comment.ID)" class="btn btn-default ReplyAddComment" data-id="@comment.ID"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                                </div>
+                            
+                                <div class="fcm-login" id="@string.Format("{0}_{1}","login",comment.ID)" data-id="@comment.ID" style="display:none;">
+                                    @*thêm vào*@
+                                    <div class="fcm-login-tb clearfix">
+                                        @*thêm vào*@
+                                        <span class="fcm-login-close" id="@string.Format("{0}_{1}","close",comment.ID)">×</span>
+                                        <form id="register-information" class="information">
+                                            <div class="fcm-login-col">
+                                                <p class="fcm-login-title">Nhập thông tin để bình luận:</p>
+                                                <p><input id="@string.Format("{0}_{1}","name",comment.ID)" class="form-control fcm-login-name" type="text" placeholder="Họ tên (bắt buộc)" @*name="name"*@></p>
+                                                <p><input id="@string.Format("{0}_{1}","email",comment.ID)" class="form-control fcm-login-email" type="email" placeholder="Email"></p>
+                                                <p><input id="@string.Format("{0}_{1}","phone",comment.ID)" class="form-control fcm-login-phone" type="text" placeholder="Điện thoại"></p>
+                                                @*<p><input class="fcm-login-btn" type="submit" value="Bình luận"></p>*@
+                                                <button type="button" class="btn btn-default clickSubComment" id="@string.Format("{0}_{1}","clickSubComment",comment.ID)" data-id="@comment.ID"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                                            </div>
+                                        </form>
+                                    </div> @*thêm vào*@
+                                </div>@*thêm vào*@
+
+                            </div>
+                            @*<div> thêm vào</div>*@
+                        </div>@*thêm vào*@
+                      
+                     </div>
+                                <div class="SubComment" data-id="@comment.ID"></div>
+                                </div>
+              </div>
             <div class="col-md-1" style="width: 19%;">
                 <div class="commentDate">
+                   <span>@comment.UserName </span> 
+                    
                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                    <time class="timeago" style="margin-top: 27px; font-size: 13px; color: #9c9898;  margin-left: 4px;" datetime="@comment.Datetime">@comment.Datetime</time>
+                    <time class="timeago" style="margin-top: 27px; font-size: 13px; color: #9c9898;margin-left: 4px;" title="@comment.Datetime" datetime="@comment.Datetime">@Utility.BackDateTime(comment.Datetime)</time>
 
                 </div>
             </div>
         </div>
 
+
+
+
+        @*them vào*@
+        <div class="nts-toast1" id="@string.Format("{0}_{1}","nts-toast1",comment.ID)" style="display:none;width:298px;z-index:9999;margin: 0 auto;position: fixed;top:50%;left: 50%;margin-left: -145px;margin-top: -26px;">
+            <div class="nts-wrapper" style="border:1px #71b371 solid;background: #C14D4D;color: #F7F7F7;height: auto;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;padding:12px 12px 10px 1px;font-size:12px;line-height: 24px;position: relative;">
+                <div class="nts-close" style="position: absolute;right: 5px;top: 0;cursor: pointer">x</div>
+                <div class="nts-icon-success" style="position: absolute;width: 32px;height : 32px;left:7px">
+                </div>
+                <div class="nts-content1" id="@string.Format("{0}_{1}","nts-content1",comment.ID)" style="padding-left: 40px;text-align: center;">Bạn cần nhập nội dung lớn hơn 3 ký tự.</div>
+            </div>
+        </div>
+        @*them vào*@
+
     }
 }
+
+<script src="~/scripts/jquery.timeago.js"></script>
 <script type="text/javascript">
+
     $(document).ready(function () {
         //Get All ReplyComments
         // $(".Reply").on('click', function (e) {
-
+       
         //$('.ReplayComments_' + Comment_ID).toggle();
+
+        var ma = $(this).attr("data-id");
+
         $(".Reply").on('click',function (e) {
             e.preventDefault();
             var id = $(this).attr('data-id');
@@ -90,48 +194,103 @@
         });
             //var Comment_ID = $(this).attr('data-id');
            
-    
+        $(".ReplyAddComment").click(function () 
+        {
+            var ma = $(this).attr('data-id');
+            //$(".content").keypress();
+            $("#inputReply_" + ma).keypress();
+            var value = $("#inputReply_" + ma).val().length;
+             if (value <= 2)
+            {
+                $("#nts-content1_"+ma).html("<span>Bạn hãy nhập ít nhất 3 kí tự</span>");
+                $('#nts-toast1_'+ma).css('display', "block");
+                $('#nts-toast1_'+ma).hide(3000);
+            }
+        });
 
         //Add Reply Comment
-        $('.ReplyAddComment').on('click', function () {
-            var ID = $(this).attr('data-id');
-           // var ID = $('.ReplyAddComment').attr('data-id');
-            var Content = $('#inputReplay_' + ID).val(); // lấy giá trị ComID tức comment.ID
-            var dateTimeNow = new Date();
+        $(".clickSubComment").show(function () {
+            var ma = $(this).attr("data-id");
+            $('#clickSubComment_'+ma).on('click', function () {
+                  // ma = $(".content").attr("data-id");
+                //đếm kí tự nhập vào 
+                //$(".content").keypress();
+                $("#inputReply_" + ma).keypress();
+                if ($("#inputReply_" + ma).val().length > 2) {
+                    $("#name_" + ma).keypress(function () { });
+                    if ($("#name_" + ma).val().length >= 1) {
 
-            var data = {
-                Content: Content,
-                DateTime: dateTimeNow.toLocaleString()
-            };
+                        var ID = $(this).attr('data-id');
+                        // var ID = $('.ReplyAddComment').attr('data-id');
+                        var Content = $('#inputReply_' + ID).val(); // lấy giá trị ComID tức comment.ID
+                        var UserName = $("#name_" + ID).val();
+                        var dateTimeNow = new Date();
 
-            $.ajax({
-                type: 'POST',
-                url: '@Url.Action("AddSubComment","Comments")',
-                data: { data, ID},
-                success: function (response)
-                {
-                    if ($('div').hasClass('zoneReply_' + ID + ''))
-                    {
-                        $('div [ class=zoneReply_' + ID + ']').remove();
+                        var data = {
+                            Content: Content,
+                            DateTime: dateTimeNow.toLocaleString(),
+                            UserName:UserName
+                        };
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '@Url.Action("AddSubComment","Comments")',
+                            data: { data, ID},
+                                    success: function (response) {
+                                        if ($('div').hasClass('zoneReply_' + ID + '')) {
+                                            $('div [ class=zoneReply_' + ID + ']').remove();
+                                        }
+                                        var selReply = $("<div>").addClass('zoneReply_' + ID);
+
+                                        selReply.append(response) // chèn thêm nội dung và thường là ở cuối.
+                                        selReply.prependTo($(".ReplayComments_" + ID)); // thêm vào đầu danh sách đã có trước đó.
+
+                                        $('.ReplayComments_' + ID).show();
+                                    },
+                            complete: function () {
+                                //$('.ReplyAddComment_' + ID).val("");
+                                $('#inputReply_' + ID).val("");
+                                $("#name_" + ID).val("");
+                                //$("")
+                            },
+                            error: function (response) {
+                                alert("Error AddSubComment" + response);
+                            }
+                        });
+
                     }
-                    var selReply = $("<div>").addClass('zoneReply_' + ID);
+                    else if ($("#name_" + ma).val().length < 1) {
+                        $("#nts-content1_" + ma).html("<span>Bạn hãy nhập Họ tên</span>");
+                        $('#nts-toast1_' + ma).css('display', "block");
+                        $('#nts-toast1_' + ma).hide(3000);
 
-                    selReply.append(response) // chèn thêm nội dung và thường là ở cuối.
-                    selReply.prependTo($(".ReplayComments_" + ID)); // thêm vào đầu danh sách đã có trước đó.
+                    }
+                }
+                else if ($("#inputReply_" + ma).val().length <= 2) {
+                    $("#nts-content1_" + ma).html("<span>Bạn hãy nhập ít nhất 3 kí tự</span>");
+                    $('#nts-toast1_' + ma).css('display', "block");
+                    $('#nts-toast1_' + ma).hide(3000);
 
-                    $('.ReplayComments_' + ID).show();
-                },
-                complete: function () {
-                    //$('.ReplyAddComment_' + ID).val("");
-                    $('#inputReplay_' + ID).val("");
-                },
-                error: function (response)
-                {
-                    alert("Error AddSubComment" + response);
+                }
+
+            });
+        });
+
+        $(".content").show(function () {
+            var ma=$(this).attr("data-id");
+            $("#inputReply_" + ma).keypress(function () {
+                if ($("#inputReply_" + ma).val().length > 1) {
+                    $("#login_" + ma).show(500);
+                    $("#ReplyAddComment_"+ma).hide();
+                    $("#close_"+ma).click(function () {
+                        $("#login_"+ma).hide(500);
+                        $("#ReplyAddComment_"+ma).show();
+                    })
                 }
             });
         });
-        (window.jQuery);
-        //jQuery("time.timeago").timeago();
+        
+        jQuery("time.timeago").timeago();
+        //(window.jQuery);     
     })
 </script>

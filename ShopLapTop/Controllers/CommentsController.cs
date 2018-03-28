@@ -20,13 +20,22 @@ namespace ShopLapTop.Controllers
         [HttpPost]
         public ActionResult AddComment(CommentViewModel model,int MaSP)
         {
-            Comment com = new Comment();
-            var postdetail = lt.Sanphams.FirstOrDefault(x => x.MaSP == MaSP);
+            //var comment = lt.Comments.FirstOrDefault(x => x.ID == MaSP);
+            //if()
+            //if (model.Content.ToList().Count> 1)
+            //{
+            //    model.MaSP = MaSP;
+            //}
+            Comment com = null;
+            var postdetail = lt.Sanphams.SingleOrDefault(x => x.MaSP == MaSP);
             if (model != null)
             {
                 com = new Comment() {
+                    UserName=model.UserName,
                     Content=model.Content,
-                    Datetime=DateTime.Now
+                    Datetime=model.Datetime,
+                    //Datetime=DateTime.Now,
+                    MaSP=model.MaSP
                 };
 
                 if (postdetail != null)
@@ -51,14 +60,16 @@ namespace ShopLapTop.Controllers
         [HttpGet]
         public PartialViewResult GetListComment(int MaSP)
         {
+            //IQueryable<CommentViewModel> comment = lt.Comments.Where(x => x.MaSP == MaSP).Select(p => new CommentViewModel
             IQueryable<CommentViewModel> comment = lt.Comments.Where(x => x.MaSP == MaSP).Select(p => new CommentViewModel
             {
-                ID=p.ID,
-                Datetime=p.Datetime,
-                Content=p.Content,
-                Like=p.LikeCount,
-                UserName=p.UserName,
-            }).AsQueryable();
+                ID = p.ID,
+                Datetime = p.Datetime,
+                //Datetime=DateTime.Now,
+                UserName = p.UserName,
+                Content = p.Content,
+                Like = p.LikeCount,
+            }).AsQueryable().Distinct();
             return PartialView("~/Views/Shared/_MyComments.cshtml",comment);
         }
 
@@ -73,6 +84,7 @@ namespace ShopLapTop.Controllers
                 UserName=p.UserName,
                 Content=p.Content,
                 DateTime=p.DateTime,
+                //DateTime=DateTime.Now,
                 Like=p.Like,
                 Dislike=p.Dislike,              
             }).AsQueryable().Distinct();
@@ -88,10 +100,13 @@ namespace ShopLapTop.Controllers
             if (data != null)
             {
                 commentlike = new CommentLike {
-                    //CommentID=model.CommentID,
+                    //CommentID=model.CommentIDs,
                    // UserName=model.UserName,
                     Content=data.Content,
-                    DateTime=data.DateTime,                   
+                    //DateTime=data.DateTime,   
+                    UserName=data.UserName, 
+                    DateTime=data.DateTime,
+                    //DateTime=DateTime.Now,               
                    // Like=model.Like,
                     //Dislike=model.Dislike,
                     //Comment_ID = model.Comment_ID,

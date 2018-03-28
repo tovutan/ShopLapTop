@@ -140,7 +140,7 @@
     <Content Include="Assets\admin\dist\css\sb-admin-2.min.css" />
     <Content Include="Assets\admin\dist\js\sb-admin-2.js" />
     <Content Include="Assets\admin\dist\js\sb-admin-2.min.js" />
-    <Content Include="Assets\admin\js\Comment.js" />
+    <Content Include="Assets\client\js\Comment.js" />
     <Content Include="Assets\admin\js\sb-admin-2.js" />
     <Content Include="Assets\admin\pages\forms.html" />
     <Content Include="Assets\admin\pages\index.html" />
@@ -367,6 +367,8 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\jquery-3.3.1.js" />
+    <Content Include="scripts\jquery.timeago.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

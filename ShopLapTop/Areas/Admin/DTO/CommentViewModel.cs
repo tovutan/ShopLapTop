@@ -12,7 +12,7 @@ namespace ShopLapTop.Areas.Admin.DTO
         public IList<Comment> Comments { get; set; }
         public int  ID { get; set; }
         public Comment comment { get; set; }
-        public DateTime? Datetime { get; set; }
+        public DateTime Datetime { get; set; }
         public IList<CommentViewModel> ChildRelies { get; set; }
         public string Content { get; set; }
         public int? Like { get; set; }

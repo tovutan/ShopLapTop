@@ -47,13 +47,13 @@ namespace ShopLapTop
 
             
 
-            routes.MapRoute(
-               name: "Product Detail",
-               url: "{controller}/{action}/{id}",
-               //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-               defaults: new { controller = "Product", action = "chitietsanpham", id = UrlParameter.Optional },
-               namespaces: new[] { "ShopLapTop.Controllers" }
-           );
+           // routes.MapRoute(
+           //    name: "Product Detail",
+           //    url: "{controller}/{action}/{id}",
+           //    //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+           //    defaults: new { controller = "Product", action = "chitietsanpham", id = UrlParameter.Optional },
+           //    namespaces: new[] { "ShopLapTop.Controllers" }
+           //);
         }
     }
 }

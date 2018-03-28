@@ -8,3 +8,12 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Model\bin\Debug\EntityFramework
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Model\obj\Debug\Model.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Model\obj\Debug\Model.pdb
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\Model.dll.config
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\Model.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\Model.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\EntityFramework.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\EntityFramework.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\obj\Debug\Model.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\obj\Debug\Model.pdb

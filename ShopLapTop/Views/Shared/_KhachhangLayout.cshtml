@@ -13,7 +13,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <link href="~/Assets/client/css/Bootstrap.css" rel="stylesheet" />
     <!-- jQuery (necessary JavaScript plugins) -->
+    
     <script type='text/javascript' src="/Assets/client/js/jquery-1.11.1.min.js"></script>
+    @*<script src="~/scripts/jquery-3.3.1.js"></script>*@
+
     <!-- Custom Theme files -->   
     <link href="~/Assets/client/css/Style.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Assets/client/css/etalage.css">
@@ -52,6 +55,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             });
         });
     </script>
+    <script src="~/scripts/jquery.timeago.js"></script>
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     <!-- header_top -->
@@ -179,26 +184,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>        
     </div>
-    <script>
-
-			jQuery(document).ready(function($) {
-
-				$(window).load(function(){
-				 	if($('.menu').length>0) {
-				 		var _top=$('.menu').offset().top;
-				 		$(window).scroll(function(evt) {
-				 			var _y=$(window).scrollTop();
-				 			if(_y>_top) {
-				 				$('.menu').addClass('fixed');
-				 			}
-				 			else {
-				 				$('.menu').removeClass('fixed');
-				 			}
-				 		})
-				 	}
-				});
-			});
-    </script>
+    
 
 
 
@@ -247,15 +233,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>*@
                 <div class="clearfix"> </div>
-                <li><i class="add"> </i>192 Hàm Tử</li>
-                <li><i class="phone"> </i>025-2839341</li>
-                <li><a href="mailto:info@example.com"><i class="mail"> </i>info@sitename.com </a></li>
+                <div><i class="add"> </i>192 Hàm Tử</div>
+                <div><i class="phone"> </i>025-2839341</div>
+                <div><a href="mailto:info@example.com"><i class="mail"> </i>info@sitename.com </a></div>
 
             </div>
             <div class="clearfix"> </div>
             <p>Copyrights © 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>
-    @RenderSection("scripts",required:false)
+    <script>
+			jQuery(document).ready(function($) {
+
+				$(window).load(function(){
+				 	if($('.menu').length>0) {
+				 		var _top=$('.menu').offset().top;
+				 		$(window).scroll(function(evt) {
+				 			var _y=$(window).scrollTop();
+				 			if(_y>_top) {
+				 				$('.menu').addClass('fixed');
+				 			}
+				 			else {
+				 				$('.menu').removeClass('fixed');
+				 			}
+				 		})
+				 	}
+				});
+			});
+    </script>
 </body>
 </html>
