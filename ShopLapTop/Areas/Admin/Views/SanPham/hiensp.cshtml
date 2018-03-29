@@ -4,6 +4,9 @@
     ViewBag.Title = "hiensp";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+@section scripts{
+    <script src="~/Assets/admin/js/controller/productController.js"></script>
+    }
 <div>
     @Html.ActionLink("Thêm sản phẩm", "them", "SanPham")
 </div>
@@ -16,7 +19,18 @@
             <div class="thumbnail" @*style="width:210px;height:300px;"*@>
                 <a href="#" style="text-decoration: none;">
                     <div style="width:196px;height:196px;margin-left:auto;margin-right:auto;">
-                        <img src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" style="width:100%" alt="Image">
+                        <img src="~/Assets/hinhanh/sanpham/@{
+                            if (item.Hinh.Contains("/"))
+                            {
+                                // t = item.Hinh.LastIndexOf("/");
+                                @(item.Hinh = item.Hinh.Substring(item.Hinh.LastIndexOf("/")+1));
+                            }
+                            else
+                            {
+                                @item.Hinh;
+                            }
+
+                        }" class="img-responsive" style="width:100%" alt="Image">
                     </div>
                     <div class="caption" style="text-align:left; height:150px;">
                         <div>
@@ -194,6 +208,7 @@
                 </a>
                 <br />
                 <div>
+                    <a href="#" data-id="@item.MaSP" class="btn-images">Quản lý ảnh |</a>
                     @Html.ActionLink("Sửa", "sua", new { @id = item.MaSP }) |
                     @Html.ActionLink("Xóa", "xoa", new { @id = item.MaSP }, new { onclick = "return confirm('Bạn có chắc muốn xóa sản phẩm này chứ?')" })
                     @*<a href="~/Admin/SanPham/xoa/@item.MaSP">Xóa</a>*@
@@ -202,6 +217,34 @@
         </div>
                                     }
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="imagesManange" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Quản lý hình ảnh</h4>
+            </div>
+            <div class="modal-body">
+                <div id="imageList" style="margin:5px;">
+
+                </div>
+                <div class="clear"></div>
+                <input type="button" id="btnChooseImages" class="btn btn-primary" name="name" value="Chọn ảnh" />
+                <input type="hidden" id="hidProductID" name="name" value="0" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnSaveImages">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <div>
     @Html.PagedListPager(Model, page => Url.Action("hiensp", new { page = page }))
 </div>

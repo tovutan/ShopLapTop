@@ -14,4 +14,14 @@ namespace ShopLapTop.Areas.Admin.Models
         public string ID { get; set; }
         public string Name { get; set; }
     }
+
+    public class RoleType
+    {
+        public const string ADMIN = "ADMIN";
+        public const string MOD = "MOD";
+        public const string SELFMOD = "SELFMOD";
+        public const string MEMBER = "MEMBER";
+   
+    }
+ 
 }

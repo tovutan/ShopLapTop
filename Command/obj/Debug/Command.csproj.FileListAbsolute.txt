@@ -6,3 +6,4 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Command\bin\Debug\Comman
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Command\bin\Debug\Command.pdb
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Command\obj\Debug\Command.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Command\obj\Debug\Command.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Command\obj\Debug\Command.csprojResolveAssemblyReference.cache

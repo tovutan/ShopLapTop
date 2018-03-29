@@ -25,7 +25,7 @@ namespace ShopLapTop.Areas.Admin.Models
         public int MaSP { get; set; }
         [DataType(DataType.Currency, ErrorMessage = "Chỉ được nhập số")]
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(150)]
+        [StringLength(200)]
 
         public string  TenSP { get; set; }
        // bodautiengviet.LoaiBoDauTiengViet(TenSP)
@@ -42,16 +42,16 @@ namespace ShopLapTop.Areas.Admin.Models
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(100)]
+        [StringLength(200)]
         public string ram { get; set; }
 
 
-        [StringLength(100)]
+        [StringLength(200)]
         //[Required(ErrorMessage = "không được để trống")]
         public string hdd { get; set; }
 
 
-        [StringLength(70)]
+        [StringLength(200)]
         //[Required(ErrorMessage = "không được để trống")]
         public string ssd { get; set; }
 
@@ -62,11 +62,11 @@ namespace ShopLapTop.Areas.Admin.Models
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(100)]
+        [StringLength(200)]
         public string cd_dvd { get; set; }
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(150)]
+        [StringLength(200)]
         public string ketnoi { get; set; }
 
 
@@ -76,16 +76,16 @@ namespace ShopLapTop.Areas.Admin.Models
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(30)]
+        [StringLength(200)]
         public string trongluong { get; set; }
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(30)]
+        [StringLength(200)]
         public string pin { get; set; }
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(90)]
+        [StringLength(200)]
         public string hdh { get; set; }
 
         [Required(ErrorMessage = "Không được để trống")]
@@ -114,11 +114,13 @@ namespace ShopLapTop.Areas.Admin.Models
         public DateTime? Ngayban { get; set; }
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(70)]
+        [StringLength(200)]
         public string Hinh { get; set; }
 
+        public string MoreImages { get; set; }
 
         //[Required(ErrorMessage = "không được để trống")]
+        [DefaultValue(true)]
         public bool? trangthai { get; set; }
 
 

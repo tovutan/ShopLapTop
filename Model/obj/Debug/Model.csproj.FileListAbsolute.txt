@@ -17,3 +17,4 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\EntityFr
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\obj\Debug\Model.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\obj\Debug\Model.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

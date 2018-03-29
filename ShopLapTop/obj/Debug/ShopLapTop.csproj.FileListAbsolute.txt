@@ -118,3 +118,11 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\Sho
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.csproj.GenerateResource.Cache
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_FileEditor.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_ImageResize.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_Watermark.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_FileEditor.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_ImageResize.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_Watermark.pdb

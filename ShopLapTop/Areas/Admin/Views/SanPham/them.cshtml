@@ -11,6 +11,24 @@
         color:red; 
     }
 </style>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#btnSelectImage").on('click', function (e) {
+                e.preventDefault();
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (url) {
+                    $("#txtimage").val(url);
+                }
+                finder.popup();
+            })
+            var editor = CKEDITOR.replace('txtContent', {
+                customConfig: '/Assets/admin/js/plugins/ckeditor/config.js'
+                //cloudServices_tokenUrl: 'https://example.com/cs-token-endpoint',
+            });
+        })
+    </script>
+    }
 @helper ChildCategory(){
 
 }
@@ -166,7 +184,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Mota, htmlAttributes: new { @class = "control-label col-xs-2" })
                     <div class="col-xs-10">
-                        @Html.EditorFor(model => model.Mota, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextAreaFor(model => model.Mota, new { htmlAttributes = new { @class = "form-control" },id="txtContent" })
                         @Html.ValidationMessageFor(model => model.Mota, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -182,7 +200,9 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Hinh, htmlAttributes: new { @class = "control-label col-xs-2" })
                     <div class="col-xs-10">
-                        @Html.EditorFor(model => model.Hinh, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextBoxFor(model => model.Hinh, new { htmlAttributes = new { @class = "form-control",@id="txtimage" },id="txtimage" })
+                        @*<a href="#" id="btnSelectImage">Chọn ảnh</a>*@
+                        <button id="btnSelectImage" class="btn-success">Chọn ảnh</button> 
                         @Html.ValidationMessageFor(model => model.Hinh, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -195,6 +215,7 @@
                     </div>
                 </div>
                 @{
+                    List<Loai> loai= (List<Loai>)(ViewBag.Type);
                     List<ChildCategory> list = (List<ChildCategory>)(ViewBag.ChildCategory);
                 }
                 <br />
@@ -205,7 +226,7 @@
                         @{
                                 <select name="Maloai">
                                
-                                    @foreach (var item in ViewBag.Type)
+                                    @foreach (var item in loai)
                                     {
                                         <option value="@item.Maloai"> |---@item.Tenloai</option>
                                         foreach (var c in list)
