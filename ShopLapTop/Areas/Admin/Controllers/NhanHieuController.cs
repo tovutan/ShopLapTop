@@ -21,6 +21,7 @@ namespace ShopLapTop.Areas.Admin.Controllers
             var kq = lt.Nhanhieux.ToList();
             return View(kq);
         }
+       
         [HttpGet]
         [HasCredential(RoleID = "ADD_BRAND")]
         public ActionResult themnh()
