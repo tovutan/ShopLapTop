@@ -14,6 +14,7 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\roslyn\VBCSCompi
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\ShopLapTop.dll.config
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\ShopLapTop.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\ShopLapTop.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Command.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\EntityFramework.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\EntityFramework.SqlServer.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Microsoft.AI.Agent.Intercept.dll
@@ -25,6 +26,7 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Microsoft.AI.Win
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Microsoft.ApplicationInsights.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Microsoft.Web.Infrastructure.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Model.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\PagedList.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\PagedList.Mvc.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Helpers.dll
@@ -33,6 +35,8 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Razor
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Webpages.Deployment.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Webpages.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Webpages.Razor.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Command.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Model.pdb
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\EntityFramework.xml
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\EntityFramework.SqlServer.xml
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Microsoft.AI.DependencyCollector.xml
@@ -49,10 +53,76 @@ D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Webpa
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Webpages.Razor.xml
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Helpers.xml
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\System.Web.Mvc.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\obj\Debug\ShopLapTop.csprojResolveAssemblyReference.cache
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\obj\Debug\ShopLapTop.Migrations.Database.resources
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\obj\Debug\ShopLapTop.csproj.GenerateResource.Cache
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\obj\Debug\ShopLapTop.dll
 D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\obj\Debug\ShopLapTop.pdb
-D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\obj\Debug\ShopLapTop.csprojResolveAssemblyReference.cache
-D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Model.dll
-D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Model.pdb
-D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Command.dll
-D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop\ShopLapTop\bin\Command.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\ApplicationInsights.config
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\csc.exe
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\System.Collections.Immutable.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\System.Reflection.Metadata.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\vbc.exe
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\VBCSCompiler.exe
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\roslyn\VBCSCompiler.exe.config
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\ShopLapTop.dll.config
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\ShopLapTop.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\ShopLapTop.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Command.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\EntityFramework.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\EntityFramework.SqlServer.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.DependencyCollector.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.Web.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.WindowsServer.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.ApplicationInsights.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.Web.Infrastructure.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Model.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\PagedList.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\PagedList.Mvc.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Helpers.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Mvc.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Razor.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Webpages.Deployment.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Webpages.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Webpages.Razor.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Command.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Model.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\EntityFramework.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\EntityFramework.SqlServer.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.DependencyCollector.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.Web.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.AI.WindowsServer.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.ApplicationInsights.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\PagedList.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\PagedList.Mvc.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Razor.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Webpages.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Webpages.Deployment.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Webpages.Razor.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Helpers.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\System.Web.Mvc.xml
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.csprojResolveAssemblyReference.cache
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.Migrations.Database.resources
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.csproj.GenerateResource.Cache
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\obj\Debug\ShopLapTop.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_FileEditor.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_ImageResize.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_Watermark.dll
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_FileEditor.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_ImageResize.pdb
+D:\Dulieu\Dulieu\Web\ASP.NET MVC hoc2\ShopLapTop - Copy\ShopLapTop\bin\CKFinder_Watermark.pdb

@@ -35,6 +35,7 @@ namespace ShopLapTop.Areas.Admin.Controllers
                 var listCredentials = userdao.GetListCredential(model.username);
                 Session.Add(CommonConstants.SESSION_CREDENTIAL, listCredentials);
                 Session["user"] = user;
+                Session["name"] = user.name;
                 return RedirectToAction("hiensp", "SanPham");
             }
             else if (result == -3)

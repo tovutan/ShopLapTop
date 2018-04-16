@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="comment.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(function(){
+    //i=0;
+    $('textarea').keypress(function(){
+        //$(this).val(i+=1);
+        if($(this).val().length > 1)
+        {
+        	$('.fcm-login').show(500);
+        	$("#btnCommentCate").hide();
+        	$(".fcm-login-close").click(function(){
+        		$(".fcm-login").hide(500);
+        		$("#btnCommentCate").show();
+        	});       	
+            //alert("ok men");
+        }
+        $("#btnCommentCate").click(function(){
+        	if($(this).val().length<0)
+        	{
+        		$(".nts-toast").show();
+        	}
+        }); 
+        
+        	
+        
+      
+    });
+   // $('button').click(function(){
+        //$('input').keypress()
+    //});
+});
+</script>
+</head>
+
+<body>
+<!-- <input type="text" value="" /> -->
+<!-- <button class="btn" style="display:none;">Click</button> -->
+
+
+<div class="fshop-cmt-main">
+	<div class="clearfix">
+	<form>
+		<div class="fshop-cmt-tabox">
+			<textarea id="txt-comment-cate" class="fshop-cmt-textarea" rows="3" placeholder="Viết bình luận của bạn..." style="width: 76%;"></textarea>
+			<input type="submit" class="fshop-cmt-tabtn" value="Bình luận" id="btnCommentCate" style="display: block;">
+		</div>
+	</form>
+
+
+	<div class="fcm-login" style="display: none;">
+		<div class="fcm-login-tb clearfix">
+			<span class="fcm-login-close">×</span>
+			<form id="register-information">
+				<div class="fcm-login-col">
+					<p class="fcm-login-title">Nhập thông tin để bình luận:</p>
+					<p><input class="fcm-login-txt" type="text" placeholder="Họ tên (bắt buộc)" name="name"></p>
+					<p><input class="fcm-login-txt" type="email" placeholder="Email" name="email"></p>
+					<p><input class="fcm-login-txt" type="text" placeholder="Điện thoại" name="phone"></p>
+					<p><input class="fcm-login-btn" type="submit" value="Bình luận"></p>
+				</div>
+			</form>
+			<div class="fcm-login-col">
+			<p class="fcm-login-title">Hoặc đăng nhập qua: </p>
+			<ul class="fcm-login-sul">
+			<li>
+			<a href="javascript:void(0);" title="" class="fcm-login-fb">
+			<img src="/Content/Publishing/css/images/cmt/i_facebook.png?v=1">
+			<strong>Facebook</strong>
+			</a>
+			</li>
+			</ul>
+			</div>
+		</div>
+	</div>
+
+	</div>
+</div>
+
+<div class="nts-toast" style=" display:none;width:298px;z-index:9999;margin: 0 auto;position: fixed;top: 50%;left: 50%;margin-left: -145px;margin-top: -26px;">
+	<div class="nts-wrapper" style="border:1px #71b371 solid;background: #C14D4D;color: #F7F7F7;height: auto;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;padding:12px 12px 10px 1px;;font-size:12px;line-height: 24px;position: relative;">
+	<div class="nts-close" style="position: absolute;right: 5px;top: 0;cursor: pointer">x</div>
+	<div class="nts-icon-success" style="position: absolute;background: url(/Content/v3/images/icon_warning.png);width: 32px;height : 32px;left:7px">
+	</div>
+	<div class="nts-content" style="padding-left: 40px;text-align: center;">Bạn cần nhập nội dung lớn hơn 3 ký tự.</div>
+	</div>
+</div>
+
+</body>
+</html>

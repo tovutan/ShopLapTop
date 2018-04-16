@@ -16,6 +16,7 @@ namespace ShopLapTop.Areas.Admin.Models
         [Required]
         [StringLength(60)]
         public string password { get; set; }
+        public string name { get; set; }
 
         public bool status { get; set; }
 

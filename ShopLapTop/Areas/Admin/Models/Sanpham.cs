@@ -4,6 +4,7 @@ namespace ShopLapTop.Areas.Admin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -24,7 +25,7 @@ namespace ShopLapTop.Areas.Admin.Models
         public int MaSP { get; set; }
         [DataType(DataType.Currency, ErrorMessage = "Chỉ được nhập số")]
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(150)]
+        [StringLength(200)]
 
         public string  TenSP { get; set; }
        // bodautiengviet.LoaiBoDauTiengViet(TenSP)
@@ -41,16 +42,16 @@ namespace ShopLapTop.Areas.Admin.Models
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(100)]
+        [StringLength(200)]
         public string ram { get; set; }
 
 
-        [StringLength(100)]
+        [StringLength(200)]
         //[Required(ErrorMessage = "không được để trống")]
         public string hdd { get; set; }
 
 
-        [StringLength(70)]
+        [StringLength(200)]
         //[Required(ErrorMessage = "không được để trống")]
         public string ssd { get; set; }
 
@@ -61,11 +62,11 @@ namespace ShopLapTop.Areas.Admin.Models
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(100)]
+        [StringLength(200)]
         public string cd_dvd { get; set; }
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(150)]
+        [StringLength(200)]
         public string ketnoi { get; set; }
 
 
@@ -75,16 +76,16 @@ namespace ShopLapTop.Areas.Admin.Models
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(30)]
+        [StringLength(200)]
         public string trongluong { get; set; }
 
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(30)]
+        [StringLength(200)]
         public string pin { get; set; }
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(90)]
+        [StringLength(200)]
         public string hdh { get; set; }
 
         [Required(ErrorMessage = "Không được để trống")]
@@ -113,11 +114,13 @@ namespace ShopLapTop.Areas.Admin.Models
         public DateTime? Ngayban { get; set; }
 
         [Required(ErrorMessage = "không được để trống")]
-        [StringLength(70)]
+        [StringLength(200)]
         public string Hinh { get; set; }
 
+        public string MoreImages { get; set; }
 
         //[Required(ErrorMessage = "không được để trống")]
+        [DefaultValue(true)]
         public bool? trangthai { get; set; }
 
 
@@ -127,6 +130,10 @@ namespace ShopLapTop.Areas.Admin.Models
 
         [Required(ErrorMessage = "không được để trống")]
         public int? Mahieu { get; set; }
+
+        // đếm like
+        [DefaultValue(0)] 
+        public int? LikeCount { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HoaDon> CT_HoaDon { get; set; }
@@ -138,5 +145,17 @@ namespace ShopLapTop.Areas.Admin.Models
         //[DataType(DataType.Currency, ErrorMessage = "Chỉ được nhập số")]
         //[Required(ErrorMessage = "không được để trống")]
         public virtual Nhanhieu Nhanhieu { get; set; }
+
+        
+
+
+        // lấy Comment
+        public virtual ICollection<Comment>  comment{get;set;}
+        
+        // lấy Reply
+        public virtual ICollection<Reply> Replies { get; set; }
+
+        // Lấy ProductLike
+        public virtual ICollection<ProductLike> ProductLike { get; set; }
     }
 }

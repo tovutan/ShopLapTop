@@ -1,0 +1,161 @@
+
+body{
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #000;
+}
+
+.fshop-cmt-main{
+	max-width: 600px;
+	/*max-height: 500px;*/
+    min-height: 1px;
+    overflow: auto;
+    position: relative;
+}
+
+form,div,span,body div{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+
+}
+	.fshop-cmt-tabox{
+		width: 100%;
+		position: relative;
+	}
+	.fshop-cmt-textarea{
+	z-index: 1;
+    outline: none;
+    display: block;
+    width: : 100%;
+    height: auto;
+    overflow: auto;
+    resize: none;
+    padding: 6px 105px 6px 12px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font: 99% sans-serif;
+	}
+	input:focus, textarea:focus, select:focus {
+    outline-offset: -2px;
+	}
+
+	textarea{
+		    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    padding: 2px;
+	}
+	input[type="submit" i]{
+		padding: 1px 6px;
+		align-items: flex-start;
+		text-align: center;
+		cursor: default;
+		color: buttontext;
+		background-color: buttonface;
+		box-sizing: border-box;
+		padding: 2px 6px 3px;
+		border-width: 2px;
+		border-style: outset;
+		border-color: buttonface;
+		border-image: initial;
+		cursor: pointer;
+		-webkit-appearance: button;
+		position: absolute;
+		right: 40px;
+		bottom: 10px;
+		background: #db0404;
+		color: #fff;
+		outline: none;
+		border: none;
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+		-webkit-appearance: button;
+		cursor: pointer;
+		height: 34px;
+		padding: 6px 12px;
+		margin: 0;
+		font-size: 14px;
+		line-height: 1.42857143;
+		border-radius: 4px;
+		    -webkit-appearance: button;
+	}
+	.fshop-cmt-tabtn:hover {
+        box-shadow: inset 0 0 10px 0 rgba(0,0,0,.5);
+    }
+
+    input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
+
+.fcm-login-tb {
+    display: table;
+    width: 95.7%;
+    border: 1px solid #ccc;
+    border-top: none;
+    position: relative;
+    border-radius: 0 0 4px 4px;
+}
+.clearfix {
+    zoom: 1;
+}
+.fcm-login-close {
+    position: absolute;
+    top: -5px;
+    right: 3px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.fcm-login-col {
+    display: table-cell;
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
+/*h1, h2, h3, h4, h5, h6, p, small, strong, b, i {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+}*/
+
+.fcm-login-title {
+    margin-bottom: 10px;
+}
+.fcm-login-sul {
+    list-style: none;
+}

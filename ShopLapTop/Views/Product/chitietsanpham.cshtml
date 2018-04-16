@@ -4,37 +4,89 @@
     Layout = "~/Views/Shared/_KhachhangLayout.cshtml";
 }
 @section search{
-        <div class="visible-md visible-lg search">
-            @using (Html.BeginForm("tim", "Product", FormMethod.Post))
-            {
-                <input type="text" value="" name="txttim" placeholder="search...">
-                <input type="submit" value="">
-            }
-            <a href="#" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
-        </div>
+    <div class="visible-md visible-lg search">
+        @using (Html.BeginForm("tim", "Product", FormMethod.Post))
+        {
+            <input type="text" value="" name="txttim" placeholder="search...">
+            <input type="submit" value="">
+        }
+        <a href="#" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
+    </div>
 
-    }
+}
 @section search2{
-        <div class="visible-xs search">
-            @using (Html.BeginForm("tim", "Product", FormMethod.Post))
-            {
-                <input type="text" value="" name="txttim" placeholder="search...">
-                <input type="submit" value="">
-            }
-            <a href="#" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
-        </div>
+    <div class="visible-xs search">
+        @using (Html.BeginForm("tim", "Product", FormMethod.Post))
+        {
+            <input type="text" value="" name="txttim" placeholder="search...">
+            <input type="submit" value="">
+        }
+        <a href="#" style="text-decoration:none; font-family:Roboto;">TÌM KIẾM NÂNG CAO</a>
+    </div>
 
+}
+
+
+
+<style>
+    .fshop-cmt-main1 {
+        max-width: 600px;
+        /*max-height: 500px;*/
+        min-height: 1px;
+        overflow: auto;
+        position: relative;
     }
+
+    .AddComment {
+        position: relative;
+        margin-left: 0px;
+    }
+
+    .addComment {
+        position: relative;
+        bottom: 25px;
+        right: 60px;
+    }
+
+    .fcm-login1 {
+    }
+
+    .content1 {
+        margin-left: 10px;
+        resize: none;
+        width: 76%;
+        margin-bottom: 0px;
+        padding: 6px 50px 6px 12px;
+    }
+
+    .information1 {
+        margin-left: 10px;
+        width:50%;
+    }
+
+    .fcm-login-close1 {
+        margin-left: 450px;
+        /*position: absolute;*/
+        top: -5px;
+        right: 3px;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 20px;
+        color: #ccc;
+    }
+
+    /*#spHeader {background-color:#52B7F1 !important;}#spHeader p span{color:#000 !important;}.spHeaderNav {color:#000 !important;}*/
+</style>
 <div class="women_main">
-<!-- start content -->
+    <!-- start content -->
     <div class="row single">
         <div class="col-md-9 det">
             <div class="single_left">
                 <div class="grid images_3_of_2" style="width:196px;height:196px;margin-left:auto;margin-right:auto;">
                     <ul id="etalage" style="width:196px;height:196px;margin-left:auto;margin-right:auto;">
-                       @{
-                           List<Sanpham> kq = (List<Sanpham>)(ViewBag.kq);
-                       }
+                        @{
+                            List<Sanpham> kq = (List<Sanpham>)(ViewBag.kq);
+                        }
                         @foreach (var item in kq)
                         {
                             <li>
@@ -45,18 +97,18 @@
                             </li>
 
 
-                        @*<li>
-                            <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
-                            <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" title="" />
-                        </li>
-                        <li>
-                            <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
-                            <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
-                        </li>
-                        <li>
-                            <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
-                            <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
-                        </li>*@
+                            @*<li>
+                                    <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                                    <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" title="" />
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                                    <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                                    <img class="etalage_source_image" src="~/Assets/hinhanh/sanpham/@item.Hinh" class="img-responsive" />
+                                </li>*@
                         }
                     </ul>
                     <div class="clearfix"></div>
@@ -67,14 +119,15 @@
                         @foreach (var item in kq)
                         {
                             <tr>
-                                <td>Model</td><td>@item.TenSP</td>                              
+                                <td>Model</td>
+                                <td>@item.TenSP</td>
                             </tr>
                             <tr>
                                 <td>CPU</td>
                                 <td>
                                     @item.cpu
                                 </td>
-                                
+
                             </tr>
                             <tr>
                                 <td>RAM</td>
@@ -83,7 +136,7 @@
                             <tr>
                                 <td>Ổ cứng</td>
                                 <td>
-                                    @{ 
+                                    @{
                                         if (item.ssd != null && item.hdd != null)
                                         {
                                             @(item.ssd + item.hdd);
@@ -131,12 +184,12 @@
                                 <td>Hệ điều hành</td>
                                 <td>@item.hdh</td>
                             </tr>
-                        }
-                       
-                    </table>                                     
+                                        }
+
+                    </table>
                     @*<div class="btn_form">
-                        <a href="checkout.html">buy</a>
-                    </div>*@
+                            <a href="checkout.html">buy</a>
+                        </div>*@
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -144,45 +197,283 @@
                 <h6>Thông tin chi tiết</h6>
                 <p class="prod-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option</p>
             </div>
-            @*<div class="single-bottom2">              
-            </div>*@
-    </div>
+            @*<div class="single-bottom2">
+                </div>*@
+        </div>
         <div class="col-md-3" style="margin-top:5%;">
-       
-                <table cellpadding="2" cellspacing="2">
-                    @foreach (var item in kq)
-                    {
 
-                        <tr>
-                            <td><span>Giá: </span></td>
-                           
-                                @if (item.Giaban == item.Giakhuyenmai)
-                                {
-                                    <td><span style="color:red;">@String.Format("{0:0,0}đ",item.Giaban)</span></td>
-                                }
-                                else
-                                {
-                                     <td><span style="color:red;text-decoration:line-through">@String.Format("{0:0,0}đ",item.Giaban) </span></td>
-                          
-                                    <td><span style="color:red;margin-left:9px;">@String.Format("{0:0,0}đ",item.Giakhuyenmai)</span></td>
-                                }                                                 
-                        </tr>
+            <table cellpadding="2" cellspacing="2">
+                @foreach (var item in kq)
+                {
+
+                    <tr>
+                        <td><span>Giá: </span></td>
+
+                        @if (item.Giaban == item.Giakhuyenmai)
+                        {
+                            <td><span style="color:red;">@String.Format("{0:0,0}đ", item.Giaban)</span></td>
+                        }
+                        else
+                        {
+                            <td><span style="color:red;text-decoration:line-through">@String.Format("{0:0,0}đ", item.Giaban) </span></td>
+
+                                    <td><span style="color:red;margin-left:9px;">@String.Format("{0:0,0}đ", item.Giakhuyenmai)</span></td>
+                        }
+                    </tr>
                         <tr>
                             <td></td>
                         </tr>
-                    }
-                </table>
+                }
+            </table>
             <div class="btn_form">
                 @foreach (var item in kq)
                 {
                     <a href="~/GioHang/Them?Ma=@item.MaSP">Mua</a>
                 }
                 @*<a href="checkout.html">Mua</a>*@
-               
+
             </div>
-        </div>  
-            <div class="clearfix"></div>
         </div>
-<!-- end content -->
- </div>
+        <div class="clearfix"></div>
+
+    </div>
+    @foreach (var item in kq)
+    {
+        <div class="panel-footer">
+            @*<button type="button" class="btn btn-default Comment" data-id="@item.MaSP" value="Comment">
+                   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Comment
+                </button>*@
+            <div class="Comment" data-id="@item.MaSP"></div>
+        </div>
+
+        <div id="@string.Format("{0}_{1}","commentsBlock",item.MaSP)" style="border:1px solid #f1eaea;background-color:#eaf2ff;">
+
+            <div class="fshop-cmt-main1">
+                @*<div> thêm vào</div>*@
+                <div class="clearfix">
+                    @*thêm vào*@
+
+                    <div class="AddComment" style="margin-top:8px;">
+                        <textarea type="text" rows="4" id="@string.Format("{0}_{1}","comment",item.MaSP)" class="form-control content1" placeholder="Add a Comment ..." style="display:inline;"></textarea>
+                        <button type="button" class="btn btn-default addComment" data-id="@item.MaSP"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                    </div>
+
+
+                    <div class="fcm-login1" style="display:none;">
+                        @*thêm vào*@
+                        <div class="fcm-login-tb clearfix">
+                            @*thêm vào*@
+                        <span class="fcm-login-close1">×</span>
+                         <form id="register-information" class="information1">
+                            <div class="fcm-login-col">
+                                <p class="fcm-login-title">Nhập thông tin để bình luận:</p>
+                                <p><input id="@string.Format("{0}_{1}","name1",item.MaSP)" class="form-control fcm-login-name1" type="text" placeholder="Họ tên (bắt buộc)" @*name="name"*@></p>
+                                <p><input id="@string.Format("{0}_{1}","email1",item.MaSP)" class="form-control  fcm-login-email" type="email" placeholder="Email"></p>
+                                <p><input id="@string.Format("{0}_{1}","phone1",item.MaSP)" class="form-control fcm-login-phone" type="text" placeholder="Điện thoại"></p>
+                                @*<p><input class="fcm-login-btn" type="submit" value="Bình luận"></p>*@
+                                <button type="button" class="btn btn-default clickComment" id="@string.Format("{0}_{1}","clickComment",item.MaSP)" data-id="@item.MaSP"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                            </div>
+                         </form>
+                       </div> @*thêm vào*@
+                 </div>@*thêm vào*@
+
+               </div>@*thêm vào*@
+            </div>@*thêm vào*@
+
+
+    @*them vào*@
+    @*<div class="nts-toast" style="display:none;width:298px;z-index:9999;margin: 0 auto;position: fixed;top:50%;left: 50%;margin-left: -145px;margin-top: -26px;">
+        <div class="nts-wrapper" style="border:1px #71b371 solid;background: #C14D4D;color: #F7F7F7;height: auto;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;padding:12px 12px 10px 1px;font-size:12px;line-height: 24px;position: relative;">
+            <div class="nts-close" style="position: absolute;right: 5px;top: 0;cursor: pointer">x</div>
+            <div class="nts-icon-success" style="position: absolute; background: url(/Content/v3/images/icon_warning.png); width: 32px;height : 32px;left:7px">
+            </div>
+            <div class="nts-content" style="padding-left: 40px;text-align: center;">Bạn cần nhập nội dung lớn hơn 3 ký tự.</div>
+        </div>
+    </div>*@
+
+            <div class="nts-toast" style="display:none;width:298px;z-index:9999;margin: 0 auto;position: fixed;top:50%;left: 50%;margin-left: -145px;margin-top: -26px;">
+                <div class="nts-wrapper" style="border:1px #71b371 solid;background: #C14D4D;color: #F7F7F7;height: auto;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;padding:12px 12px 10px 1px;font-size:12px;line-height: 24px;position: relative;">
+                    <div class="nts-close" style="position: absolute;right: 5px;top: 0;cursor: pointer">x</div>
+                    <div class="nts-icon-success" style="position: absolute; width: 32px;height : 32px;left:7px">
+                    </div>
+                    <div class="nts-content" style="padding-left: 40px;text-align: center;">Bạn cần nhập nội dung lớn hơn 3 ký tự.</div>
+                </div>
+            </div>
+    @*them vào*@
+
+
+
+
+</div>
+    }
+    @*<div>
+            <textarea type="" name="name" value="" style="width:500px;height:100px;" placeholder="Mời bạn nhập Bình luận..."></textarea>
+            <br />
+            <input class="btn btn-success" type="submit" style="width:auto;" value="Comment"/>
+        </div>*@
+    <!-- end content -->
+</div>
+
+@section scripts{
+<script src="~/scripts/jquery.timeago.js"></script>
+  <script type="text/javascript">
+
+           $(document).ready(function () {
+
+               $('.Comment').show(function () {
+
+                   //var id = $(this).attr("data-id"); // lấy giá trị data-id trong thẻ <button>
+                   //var id = $('.Comment').attr('data-id');
+                   var MaSP = $(this).attr('data-id');
+                   //var allCommentsArea = $('<div>').addClass('allComments_' + MaSP);
+
+                   //this function that allow us to get all comments related to post id
+                   // hàm function để lấy những comment liên quan đến sản phẩm
+                   $.ajax({
+                       //type: 'GET',
+                       type: 'GET',
+                       url: '@Url.Action("GetListComment", "Comments")',
+                       data: { MaSP: MaSP },
+                       success: function (response) {
+                           // sau khi trả về thành công thì kiểm tra xem có class allComments nào tồn tại trước đó không
+                           // nếu có thì xóa đi để thêm dữ liệu
+
+                          if ($('div').hasClass('allComments_' + MaSP + '')) {
+                               $('div[class=allComments_' + MaSP + ']').remove();
+                           }
+
+                          var  allCommentsArea = $('<div>').addClass('allComments_' + MaSP);
+                           allCommentsArea.html(response);
+                           //allCommentsArea.prependTo('#commentsBlock_' + id); //thêm vào bên trong thẻ #commentsBlock và ở vị trí đầu tiên.
+                           allCommentsArea.appendTo('#commentsBlock_' + MaSP); // thêm vào bên trong thẻ #commentsBlock và ở vị trí cuối cùng.
+                       },
+                       error: function (response) {
+                           alert('Sorry: Comments cannot be loaded!');
+                       }
+                   })
+
+               });              
+
+                      
+                           $(".clickComment").click(function (event) {
+                               $("textarea").keypress(); // mỗi lần nhấn 1 phím bất kì 
+                              
+                               if ($('textarea').val().length >2)// textarea.val().length>3
+                               {
+                                   $(".fcm-login-name").keypress(function () { });
+                                   if ($(".fcm-login-name1").val().length >= 1) // #name.val().length>3
+                                   {
+                                       //var allCommentsArea = $('<div>').addClass('allComments_' + MaSP);
+                                       //var MaSP = $(this).attr('data-id');
+                                       $("textarea").keypress();
+                                       if ($('textarea').val().length < 2)
+                                       {
+                                           $(".nts-content").html("<span>Bạn hãy nhập ít nhất 3 kí tự</span>");
+                                           $('.nts-toast').css('display', "block");
+                                           $('.nts-toast').hide(3000);
+                                           event.preventDefault();
+                                       }
+
+                                       var MaSP = $(this).attr('data-id');
+                                       var Content = $("#comment_" + MaSP).val();
+                                       var UserName = $("#name1_" + MaSP).val();
+                                       var dateTimeNow = new Date();
+
+                                       var model = {
+
+                                           Content: Content,
+                                           UserName: UserName,
+                                           Datetime: dateTimeNow.toLocaleString(),
+                                           
+                                           MaSP: MaSP
+                                       };
+                                       $.ajax({
+                                           type: "POST",
+                                           url: '@Url.Action("AddComment", "Comments")',
+                                          
+                                           data: { model, MaSP},
+                                                   success: function (response) {
+
+                                                     
+                                                       $('div [class=allComments_' + MaSP + ']').remove();
+                                                     
+
+                                                       var allCommentsArea = $('<div>').addClass('allComments_' + MaSP);
+                                                       allCommentsArea.html(response);
+                                                      
+                                                       allCommentsArea.appendTo("#commentsBlock_" + MaSP);
+                                                      
+                                                   },
+                                           complete: function () {
+                                              
+                                               $("#comment_" + MaSP).val("");
+                                               $("#name1_" + MaSP).val("");
+
+                                           },
+                                           error: function () {
+                                               alert("Sorry :Add Comment Error");
+                                           }
+                                       });
+
+                                   }
+
+                                   else if ($(".fcm-login-name1").val().length < 1)                                 
+                                   {
+                                       $(".nts-content").html("<span>Bạn hãy nhập họ tên</span>");
+                                       $('.nts-toast').css('display', "block");
+                                       $('.nts-toast').hide(3000);
+                                       
+                                   }
+
+
+                               }
+                               else if($('textarea').val().length==0 || $('textarea').val().length<=2)//($('.content1').val().length == 0 || $('.content1').val().length < 1)
+                               {
+                                   $(".nts-content").html("<span>Bạn hãy nhập ít nhất 3 kí tự</span>");
+                                   $('.nts-toast').css('display', "block");
+                                   $('.nts-toast').hide(3000);
+                                 
+                               }
+                         
+                  
+               });
+
+
+              
+
+               $(".addComment").on('click', function () {
+                   $('.addComment').keypress(function () { });
+                   if ($('.addComment').val().length < 2)
+                   {
+                           // if ($('div').hasClass('allComments_' + MaSP + ''))
+                           
+                           $('.nts-content').html("<span>Bạn hãy nhập ít nhất 3 kí tự</span>")
+                           $('.nts-toast').css('display', "block");
+                           $('.nts-toast').hide(4000);
+                          // $(".clickComment").off();
+                       }                                                                             
+                });
+
+
+               $('.content1').keypress(function (event) {
+                   if ($(this).val().length > 1) {
+                       $(".fcm-login1").show(500);
+                       $(".addComment").hide();
+                       $(".fcm-login-close1").click(function () {
+                           $(".fcm-login1").hide(500);
+                           $(".addComment").show(100);
+                       })
+                   }
+
+               });
+               jQuery("time.timeago").timeago();
+               //(window.jQuery);
+              
+           });
+
+</script>
+
+}
+
+
 
